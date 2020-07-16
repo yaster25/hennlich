@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-Regular.eot');
+    src: local('TT Norms Regular'), local('TTNorms-Regular'),
+        url('../fonts/TTNorms-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-Regular.woff') format('woff'),
+        url('../fonts/TTNorms-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-Medium.eot');
+    src: local('TT Norms Medium'), local('TTNorms-Medium'),
+        url('../fonts/TTNorms-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-Medium.woff') format('woff'),
+        url('../fonts/TTNorms-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TT Norms';
+    src: url('../fonts/TTNorms-ExtraBold.eot');
+    src: local('TT Norms ExtraBold'), local('TTNorms-ExtraBold'),
+        url('../fonts/TTNorms-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTNorms-ExtraBold.woff') format('woff'),
+        url('../fonts/TTNorms-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?hgyfem');
+  src:  url('../fonts/icomoon.eot?hgyfem#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?hgyfem') format('truetype'),
+    url('../fonts/icomoon.woff?hgyfem') format('woff'),
+    url('../fonts/icomoon.svg?hgyfem#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e900";
+}
+.icon-search:before {
+  content: "\e901";
+}
+.icon-cart:before {
+  content: "\e902";
+}
+.icon-adv-01:before {
+  content: "\e905";
+}
+.icon-adv-02:before {
+  content: "\e906";
+}
+.icon-adv-03:before {
+  content: "\e903";
+}
+.icon-adv-04:before {
+  content: "\e904";
+}
+.icon-arrow-down:before {
+  content: "\e907";
+}
+.icon-arrow-left:before {
+  content: "\e908";
+}
+.icon-arrow-right:before {
+  content: "\e909";
+}
+.icon-telegram:before {
+  content: "\e90a";
+}
+.icon-viber:before {
+  content: "\e90b";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
