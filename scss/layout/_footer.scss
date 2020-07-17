@@ -20,7 +20,7 @@
     @include flexbox;
     flex-direction: row;
     justify-content: space-between;
-    @include align-items(center);
+    
     &__col{
         width: 25%;
         padding: 0 15px;
@@ -112,6 +112,9 @@
         &:hover{
             color: $color-blue;
         }
+    }
+    .footer-cols{
+        @include align-items(center);
     }
 }
 .toogarin{

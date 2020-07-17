@@ -74,8 +74,7 @@
                 color: #fff;
             }
         }
-    }
-    
+    }    
 }
 .header-call{
     color: $color-green;
@@ -132,7 +131,10 @@
         font-size: 17px;
         font-weight: 400;
         color: $color-white;      
-        @include placeholder-color(rgba($color-white, 0.78));       
+        @include placeholder-color(rgba($color-white, 0.78)); 
+        &:focus{
+            @include placeholder-color(transparent); 
+        }
     }   
 }
 
@@ -160,14 +162,20 @@
                 content: "";
                 position: absolute;
                 bottom: -44px;                    
-                left: 0;            
+                left: 0;       
+                right: 0;
+                margin: auto;
                 width: 0;
                 height: 3px;
                 background: $color-green;
                 transition: $default-transition;
             }
             &:hover{
+                //font-weight: 500;
                 color: $color-green;
+                &:after{
+                    width: 100%;
+                }
             }          
             &.active{
                 font-weight: 500;
