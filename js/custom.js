@@ -8,8 +8,6 @@ $(window).on('load', function () {
 });
 
 
-
-
 $(document).ready(function(){
     
     /* TOP SLIDER*/ 
@@ -333,41 +331,7 @@ $(document).ready(function(){
         return $pr_slider.slick(pr_slider_settings);
       }
     });
-    
-    /*
-    $('.js-slider-production').slick({
-        infinite: false,
-        arrows:true,
-        dots:false,
-        rows:2,
-        slidesPerRow:3,
-        appendArrows:$('.slider-production-arrows'),
-            responsive: [
-                {
-                  breakpoint: 9999,
-                  settings:"unslick" 
-                },
-                {
-                  breakpoint: 992,
-                  settings: {
-                    rows:2,
-                    slidesPerRow:3,
-                  }
-                },
-                {
-                  breakpoint: 641,
-                  settings: {
-                    rows:2,
-                    slidesPerRow:2,
-                  }
-                }
-              ]
-    });
- 
-    $(window).on('resize orientationchange', function() {
-        $('.js-slider-production').slick('refresh');
-    });*/
-    
+  
     /* END PRODUCTION SLIDER*/
     
     
@@ -404,7 +368,7 @@ $(document).ready(function(){
 			messages: {
 				email: {
                     required: "Необходимо заполнить «E-mail».",
-					email: "Введите корректный адрес электронной почты."
+					email: "Введите корректный e-mail."
                 }								
 			},
             submitHandler: function(){}
@@ -426,7 +390,13 @@ $(document).ready(function(){
             fade:false,
             responsive: [   
                 {
-                  breakpoint: 741,
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow:2
+                  }
+                },
+                {
+                  breakpoint: 640,
                   settings: {
                     variableWidth:false,
                     slidesToShow: 1,
@@ -437,7 +407,247 @@ $(document).ready(function(){
         });
     });
      /* END NUMBERS SLIDER*/ 
+    
+    /* HISTORY SLIDER*/
+    
+    $('.js-slider-history').each(function () {
+          $(this).slick({
+            infinite: false,
+            arrows:true,
+            dots:false,
+            slidesToShow:6,
+            slidesToScroll: 1,
+            //appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:false,
+              swipeToSlide:true, 
+            //variableWidth:true,
+            responsive: [   
+                {
+                  breakpoint: 1281,
+                  settings: {
+                    slidesToShow:5
+                  }
+                },
+                {
+                  breakpoint: 992,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                  }
+                },
+                {
+                  breakpoint: 741,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                  }
+                },
+                {
+                  breakpoint: 640,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+    });
+    
+    $('.item-history').on('click', function(){
+        var id=$(this).attr('data-tab');
+        $('.item-history').removeClass('active');
+        $(this).addClass('active');
+        $('.slider-history-tab').removeClass('active');
+        $('#'+id).addClass('active');
+        return false;
+    });
+    
+    /* END HISTORY SLIDER*/
+    
+    /* PROUD SLIDER*/
+    
+    $('.js-slider-proud').each(function () {
+          $(this).slick({
+            infinite: true,
+            arrows:true,
+            dots:false,
+            slidesToShow:3,
+            slidesToScroll: 1,
+            appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:false,
+            responsive: [   
+                {
+                  breakpoint: 9999,
+                  settings: "unslick"
+                },
+                {
+                  breakpoint: 992,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  }
+                },
+                {
+                  breakpoint: 640,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+    });
+    
+        $('.js-slider-garant').each(function () {
+          $(this).slick({
+            infinite: true,
+            arrows:true,
+            dots:false,
+            slidesToShow:3,
+            slidesToScroll: 1,
+            appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:false,
+            responsive: [   
+                {
+                  breakpoint: 992,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  }
+                },
+                {
+                  breakpoint: 640,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+    });
+    
+    /* END PROUD SLIDER*/
+    
+    /*CUSTOM SELECT*/
+    $('.custom-select').selectric({
+         disableOnMobile: false,         
+         nativeOnMobile: true,
+         onChange: function() {
+             $(this).parents('.selectric-wrapper').addClass('selectric-selected');
+          },
+     });
+    /*END CUSTOM SELECT*/
+    
+    if($('#filter-range-1').length){
+        var handlesSlider = document.getElementById("filter-range-1"),
+            priceFrom = parseInt($("#weight_from").val()),
+            priceTo = parseInt($("#weight_to").val());
 
+        var max = typeof maxPrice != "undefined"? maxPrice : 2000;
+
+        noUiSlider.create(handlesSlider, {
+            start: [ priceFrom, priceTo > 0? priceTo : max ],
+            step: 10,
+            connect:true,
+            range: {
+                "min": [  0 ],
+                "max": [ max ]
+            }
+        });
+    
+        var valueInput = document.getElementById('weight_from');
+        var valueInput2 = document.getElementById('weight_to');
+
+        handlesSlider.noUiSlider.on('update', function( values, handle ) {
+            
+            if ( handle ) {
+                 valueInput2.value = parseInt(values[handle]);         
+            } else {
+                valueInput.value = parseInt(values[handle]);
+            }
+            
+        });
+
+        valueInput.addEventListener('change', function(){
+            handlesSlider.noUiSlider.set([this.value, null]);
+        });
+
+        valueInput2.addEventListener('change', function(){
+            handlesSlider.noUiSlider.set([null, this.value]);
+        });
+     }
+    
+    if($('#filter-range-frequency').length){
+        var handlesSlider2 = document.getElementById("filter-range-frequency"),
+            priceFrom2 = parseInt($("#frequency_from").val()),
+            priceTo2 = parseInt($("#frequency_to").val());
+
+        var max2 = typeof maxPrice != "undefined"? maxPrice : 2000;
+
+        noUiSlider.create(handlesSlider2, {
+            start: [ priceFrom, priceTo > 0? priceTo : max ],
+            step: 10,
+            connect:true,
+            range: {
+                "min": [  0 ],
+                "max": [ max ]
+            }
+        });
+    
+        var valueInput_2 = document.getElementById('frequency_from');
+        var valueInput2_2 = document.getElementById('frequency_to');
+
+        handlesSlider2.noUiSlider.on('update', function( values, handle ) {            
+            if ( handle ) {
+                 valueInput2_2.value = parseInt(values[handle]);         
+            } else {
+                valueInput_2.value = parseInt(values[handle]);
+            }            
+        });
+
+        valueInput_2.addEventListener('change', function(){
+            handlesSlider2.noUiSlider.set([this.value, null]);
+        });
+
+        valueInput2_2.addEventListener('change', function(){
+            handlesSlider2.noUiSlider.set([null, this.value]);
+        });
+     }
+    
+    
+    
+    /* mobile filter*/
+    $('.js-mobile-filter').on('click', function(event) {
+        if(!$('body').hasClass('filter-open')){
+            event.preventDefault();		
+            $('body').addClass('filter-open');
+            $('.catalog-aside').addClass('catalog-aside-active');
+        }
+	});	
+
+	$('.js-filter-close').on('click', function(event) {        
+        if($('body').hasClass('filter-open')){ 
+            $('body').removeClass('filter-open');
+            $('.catalog-aside').removeClass('catalog-aside-active');		
+        }
+        return false;        
+	});
+     
+ 
+    /* mobile filter*/
     
      
  });
