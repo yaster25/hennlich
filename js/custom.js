@@ -649,5 +649,66 @@ $(document).ready(function(){
  
     /* mobile filter*/
     
+    /*PRODUCT IMAGES*/
+    $('.slider-product-image').slick({
+          //infinite:false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.slider-product-image-nav'
+    });
+    $('.slider-product-image-nav').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        asNavFor: '.slider-product-image',
+        dots: false,
+        arrows:false,
+        centerMode:false,
+        focusOnSelect: true,
+        variableWidth:true
+    });
+     
+    $('[data-fancybox=gallery]').fancybox({
+         loop: true,
+         infobar: false,       
+    });
+    /*END PRODUCT IMAGES*/
+    
+    
+    /*  PRODUCTS SLIDER*/ 
+        $('.js-slider-products').each(function () {
+          $(this).slick({
+            infinite: true,
+            arrows:true,
+            dots:false,
+            slidesToShow:5,
+            slidesToScroll: 1,
+            appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:false,
+            responsive: [   
+                {
+                  breakpoint: 1281,
+                  settings: {
+                    slidesToShow: 4
+                  }
+                },{
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 3
+                  }
+                },{
+                  breakpoint: 640,
+                  settings: {
+                    slidesToShow: 2
+                  }
+                }
+              ]
+        });
+    });
+     /* END PRODUCTS SLIDER*/ 
+    
      
  });
