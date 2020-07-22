@@ -388,15 +388,10 @@ $(document).ready(function(){
             swipeToSlide:true,
             centerMode:false,
             fade:false,
-            responsive: [   
+            variableWidth:true,
+            responsive: [ 
                 {
-                  breakpoint: 992,
-                  settings: {
-                    slidesToShow:2
-                  }
-                },
-                {
-                  breakpoint: 640,
+                  breakpoint: 480,
                   settings: {
                     variableWidth:false,
                     slidesToShow: 1,
@@ -417,12 +412,10 @@ $(document).ready(function(){
             dots:false,
             slidesToShow:6,
             slidesToScroll: 1,
-            //appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
             swipeToSlide:true,
             centerMode:false,
             fade:false,
-              swipeToSlide:true, 
-            //variableWidth:true,
+            swipeToSlide:true, 
             responsive: [   
                 {
                   breakpoint: 1281,
@@ -467,9 +460,73 @@ $(document).ready(function(){
         return false;
     });
     
+    
+    
+    
+    $('.slider-history-tabs').each(function () {
+          $(this).slick({
+            infinite: true,
+            arrows:true,
+            dots:false,
+            slidesToShow:3,
+            slidesToScroll: 1,
+            appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:true,
+            responsive: [   
+                {
+                  breakpoint: 9999,
+                  settings: "unslick"
+                },
+                {
+                  breakpoint: 640,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+    });   
+    // Reslick only if it's not slick()
+    $(window).on('resize', function() {
+      if (!$('.slider-history-tabs').hasClass('slick-initialized')) {
+          return $('.slider-history-tabs').each(function () {
+            $(this).slick({
+                infinite: true,
+                arrows:true,
+                dots:false,
+                slidesToShow:3,
+                slidesToScroll: 1,
+                appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+                swipeToSlide:true,
+                centerMode:false,
+                fade:true,
+                responsive: [   
+                    {
+                      breakpoint: 9999,
+                      settings: "unslick"
+                    },
+                    {
+                      breakpoint: 640,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                      }
+                    }
+                  ]
+            });
+        });
+      }
+    });
+    
+    
     /* END HISTORY SLIDER*/
     
     /* PROUD SLIDER*/
+    
+  
     
     $('.js-slider-proud').each(function () {
           $(this).slick({
@@ -505,6 +562,46 @@ $(document).ready(function(){
                 }
               ]
         });
+    });   
+    // Reslick only if it's not slick()
+    $(window).on('resize', function() {
+      if (!$('.js-slider-proud').hasClass('slick-initialized')) {
+          return $('.js-slider-proud').each(function () {
+          $(this).slick({
+            infinite: true,
+            arrows:true,
+            dots:false,
+            slidesToShow:3,
+            slidesToScroll: 1,
+            appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:false,
+            responsive: [   
+                {
+                  breakpoint: 9999,
+                  settings: "unslick"
+                },
+                {
+                  breakpoint: 992,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                  }
+                },
+                {
+                  breakpoint: 640,
+                  settings: {
+                    variableWidth:false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+    });
+      }
     });
     
         $('.js-slider-garant').each(function () {
@@ -651,7 +748,6 @@ $(document).ready(function(){
     
     /*PRODUCT IMAGES*/
     $('.slider-product-image').slick({
-          //infinite:false,
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
