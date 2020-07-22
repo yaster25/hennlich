@@ -710,5 +710,55 @@ $(document).ready(function(){
     });
      /* END PRODUCTS SLIDER*/ 
     
+    /*CALC FORM*/
+    $('.calc-form__btn-plus').on('click', function(event) {
+         var val=$(this).parents('.calc-form').find('.calc-form__input').val();
+        
+         var new_val = parseInt(val) + 1;
+         $(this).parents('.calc-form').find('.calc-form__input').val(new_val)
+         return false;
+     });
+     
+     $('.calc-form__btn-minus').on('click', function(event) {
+         var val=$(this).parents('.calc-form').find('.calc-form__input').val();
+        
+         var new_val = parseInt(val) - 1;
+         
+         if(new_val<1) new_val=1;
+         $(this).parents('.calc-form').find('.calc-form__input').val(new_val)
+         return false;
+     });
+    /*END CALC FORM*/
+    
+     /* SUBSCRIBE FORM VALIDATE*/
+    $("#form-order").validate({
+         errorElement:'div',
+         errorPlacement: function(error, element) {
+            element.parent().append(error);
+        },
+			rules: {
+                name: "required",
+				phone: "required" ,
+				email: {
+					required: true,
+					email: true
+				}	    ,
+                inn: "required"
+			},
+			messages: {
+                name: "Необходимо заполнить «ФИО».",
+				phone: "Необходимо заполнить «Телефон».",
+                inn: "Необходимо заполнить «ИНН».",	
+				email: {
+                    required: "Необходимо заполнить «E-mail».",
+					email: "Введите корректный e-mail."
+                }								
+			},
+            submitHandler: function(){
+                
+            }
+     });
+    /* END SUBSCRIBE FORM VALIDATE*/
+    
      
  });
