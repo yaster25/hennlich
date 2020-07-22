@@ -7,3 +7,4 @@ index.html<br>
 04-catalog-level2-list.html<br>
 05-card.html<br>
 06-order.html<br>
+07-press-center.html<br>

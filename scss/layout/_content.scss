@@ -1271,6 +1271,9 @@ input:-internal-autofill-selected {
             opacity: 1;
             background: rgba(255, 255, 255, 0.13);
         }
+        a{
+            color:$color-white;
+        }
         
     }
     
@@ -1388,12 +1391,12 @@ input:-internal-autofill-selected {
             width: 100%;
             height: 100%;
             display: block;
+            @include transition($default-transition);
         }
         &:hover{
-            
-            color: $color-blue;
             &:before{
                 background: #fff;
+                color: $color-blue;
             }
         }
     }
@@ -1421,12 +1424,13 @@ input:-internal-autofill-selected {
             width: 100%;
             height: 100%;
             display: block;
+            @include transition($default-transition);
         }
-        &:hover{
+        &:hover{           
             
-            color: $color-blue;
             &:before{
                 background: #fff;
+                color: $color-blue;
             }
         }
     }
@@ -1962,11 +1966,12 @@ input:-internal-autofill-selected {
                 width: 100%;
                 height: 100%;
                 display: block;
+                @include transition($default-transition);
             }
             &:hover{
-
-                color: $color-blue;
                 &:before{
+                    
+                    color: $color-blue;
                     background: #fff;
                 }
             }
@@ -3026,6 +3031,45 @@ body.filter-open {
     padding-top: 70px;
 }
 
+.section-press-center{
+    border-top: 0.8px solid #5D708C;
+    .section-press{
+        &__left{
+            max-height: 800px;
+            border-bottom: 0.8px solid #5D708C;
+            @include flexbox;
+            @include flex-direction(column);
+            @include justify-content(space-between);
+            padding-top: 70px;
+            padding-bottom: 25px;
+        }
+        &__right{
+                position: relative;
+        }   
+    }
+    .slider-news-arrows{
+        position: absolute;
+        bottom: 0;
+            left: -203px;
+    }
+    .slider-press-tabs{
+        margin-bottom: 50px;
+    }
+    
+}
+.press-form{
+    max-width: 500px;
+}
+.block-news{
+    @include flexbox;
+    @include flex-wrap(wrap);
+    .slider-news__slide{
+        width: 50%;
+    }
+}
+.section-subscribe-mobile{
+    display: none;
+}
 
 
 @media screen and (max-width: 1780px) {
@@ -3474,6 +3518,12 @@ body.filter-open {
     .slider-wrapper_products .slider-arrows{
         right: 0;
     }
+
+    .section-press-center .section-press__left{
+        max-height: 700px;
+        padding-bottom: 0;
+    }
+    
 }
 
 
@@ -3612,6 +3662,10 @@ body.filter-open {
     }
     .block-order__img{
         right: 20px;
+    }
+
+    .section-press-center .section-press__left{
+        max-height: 600px;
     }
 }
 
@@ -4410,7 +4464,7 @@ body.filter-open {
     }
     .item-news {
         height: 300px;
-        padding: 30px 30px 50px 50px;
+        padding: 30px 25px 50px 25px;
     }
     .item-news__title {
         font-size: 20px;
@@ -4893,6 +4947,36 @@ body.filter-open {
     .block-excel .form-col_subsribe .nice-input{
         margin-bottom: 20px;
     }
+
+    .section-press-center{
+        padding-top: 0;
+        @include flex-wrap(wrap);
+        border: none;
+    }
+    .section-press-center .section-press__left {
+        width: 100%;
+        padding-top: 0px;
+    }
+    .section-press-center .section-press__right{
+        width: 100%;
+        padding-bottom: 54px;
+    }
+    .section-subscribe-mobile{
+        @include flexbox;
+    }    
+    .section-press-center .press-form{
+        display: none;
+    }
+    .section-press-center .slider-press-tabs {
+        margin-bottom: 40px;
+        padding-top: 10px;
+    }
+    .section-press-center .slider-news-arrows {
+        position: absolute;
+        bottom:-20px;
+        left: auto;
+    }
+    
 }
 
 @media screen and (max-width: 740px) {
@@ -5352,7 +5436,7 @@ body.filter-open {
         bottom: 0;
     }
     .item-news {
-        height: auto;
+        height: 100%;
         padding: 35px 15px 25px;
         margin-bottom: -1px;
     }
@@ -5882,6 +5966,12 @@ body.filter-open {
     .table-cart{
         margin-bottom: 50px;
     }
+    .section-press-center .section-press__right{
+        border: none;padding-bottom: 34px;
+    }
+    .section-press-center{
+        padding-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 639px) {
@@ -6037,6 +6127,10 @@ body.filter-open {
     }
     .slider-history-tabs {
         margin: 0;
+    }
+
+    .block-news .slider-news__slide{
+        width: 100%;
     }
 }
 

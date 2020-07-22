@@ -70,8 +70,27 @@
         }
         &__link{
             color: inherit;
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                bottom: -28px;                    
+                left: 0;       
+                right: 0;
+                margin: auto;
+                width: 0;
+                height: 3px;
+                background: $color-green;
+                transition: $default-transition;
+            }
             &:hover{
-                color: #fff;
+                color: $color-green;
+            }          
+            &.active{                
+                color: $color-green;
+                &:after{
+                    width: 100%;
+                }
             }
         }
     }    
@@ -102,7 +121,6 @@
 .header-btn{
     margin-left: 60px;
 }
-
 .header-search{    
     width: 630px;
     height: 107px;
@@ -138,7 +156,6 @@
         }
     }   
 }
-
 .nav{
     font-size: 16px;
     line-height: 19px;
@@ -372,6 +389,10 @@ body.menu-open .main-wrapper {
    .header {
         height: 116px;
         margin-bottom: -116px;
+    }
+
+    .top-nav-item__link:after{
+        bottom: -16px;
     }
 }
 
