@@ -478,8 +478,10 @@ $(document).ready(function(){
         var id=$(this).attr('data-tab');
         $('.item-history').removeClass('active');
         $(this).addClass('active');
-        $('.slider-history-tab').removeClass('active');
-        $('#'+id).addClass('active');
+        //$('.slider-history-tab').removeClass('active');
+        //$('#'+id).addClass('active');
+        indexToGet = $('.slider-history-tabs .slick-slide').index( $('#'+id) );
+        $('.slider-history-tabs').slick('slickGoTo', indexToGet);        
         return false;
     });
     
@@ -489,24 +491,21 @@ $(document).ready(function(){
     $('.slider-history-tabs').each(function () {
           $(this).slick({
             infinite: true,
-            arrows:true,
+            arrows:false,
             dots:false,
-            slidesToShow:3,
+            slidesToShow:1,
             slidesToScroll: 1,
             appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
-            swipeToSlide:true,
+            swipeToSlide:false,
             centerMode:false,
             fade:true,
-            responsive: [   
-                {
-                  breakpoint: 9999,
-                  settings: "unslick"
-                },
+            swipe:false,
+            responsive: [                   
                 {
                   breakpoint: 640,
                   settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    arrows:true,
+                      swipe:true
                   }
                 }
               ]

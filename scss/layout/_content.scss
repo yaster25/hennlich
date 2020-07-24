@@ -1828,6 +1828,7 @@ input:-internal-autofill-selected {
     width: 90px;
     position: relative;
     margin: 0 auto;
+    
     &__circle{
         background: rgba(196, 220, 254, 0.13);
         border: 1px solid rgba(179, 198, 222, 0.46);
@@ -1837,6 +1838,7 @@ input:-internal-autofill-selected {
         border-radius: 50%;   
         margin: 0 auto 21px;
         @include transition($default-transition);
+        cursor: pointer;
         &:before{
             content: "";
             background: #B2BED0;
@@ -1866,8 +1868,7 @@ input:-internal-autofill-selected {
             @include transition($default-transition);
             z-index: 1;
         }
-    }    
-    
+    }        
     &__year{
         position: absolute;
         bottom: 90px;
@@ -1878,6 +1879,7 @@ input:-internal-autofill-selected {
         font-size: 18px;
         line-height: 126.5%; 
         color: #92A0B2;
+        cursor: pointer;
     }
     &.active{
         .item-history{
@@ -1909,13 +1911,11 @@ input:-internal-autofill-selected {
     }
 }
 
-.slider-history-tabs{
-    
-}
 .slider-history-tab{
-    display: none;
+   // display: none;
     &.active{
-        display: block;
+        //display: block;
+       // opacity: 1 !important;
     }
 }
 .item-history-tab{
