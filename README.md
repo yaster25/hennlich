@@ -8,3 +8,4 @@ index.html<br>
 05-card.html<br>
 06-order.html<br>
 07-press-center.html<br>
+08-news.html<br>
