@@ -106,10 +106,10 @@
             <div class="section-press__left">
                     <div class="slider-press-tabs-wrapper">
                         <ul class="slider-press-tabs">
-                            <li class="slider-press-tabs__item active"><a href="#">Все публикации</a></li>
-                            <li class="slider-press-tabs__item"><a href="#">Новости</a></li>
-                            <li class="slider-press-tabs__item"><a href="#">События</a></li>
-                            <li class="slider-press-tabs__item"><a href="#">Статьи</a></li>
+                            <li class="slider-press-tabs__item active" data-filter="0">Все публикации</li>
+                            <li class="slider-press-tabs__item" data-filter="f-1">Новости</li>
+                            <li class="slider-press-tabs__item" data-filter="f-2">События</li>
+                            <li class="slider-press-tabs__item" data-filter="f-3">Статьи</li>
                         </ul>
                     </div>
                 <div class="press-form form-white">                    
@@ -131,83 +131,244 @@
                 </div>
                 
             </div>
-            <div class="section-press__right">
-                <div class="slider-news block-news">
+            <div class="section-press__right" id="section-press">
+                <div class="slider-news js-slider-press">
                     <div class="slider-news__slide f-1">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
                             <div class="item-news__date">6 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-2">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
                             <div class="item-news__date">7 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-3">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
                             <div class="item-news__date">8 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-1">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">9 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
-                        </a>
-                    </div>
-                    <div class="slider-news__slide f-1">
-                        <a href="#" class="item-news">
-                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">10 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-2">
-                       <a href="#" class="item-news">
+                        <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">11 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-3">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">12 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-1">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">13 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-2">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">14 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
                     <div class="slider-news__slide f-1">
                         <a href="#" class="item-news">
                             <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
-                            <div class="item-news__date">15 марта 2020 года</div>
-                            <div class="item-news__title">На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
                         </a>
                     </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-1">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">6 марта 2020 года</div>
+                            <div class="item-news__title">Новость На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-2">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">7 марта 2020 года</div>
+                            <div class="item-news__title">Событие На территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    <div class="slider-news__slide f-3">
+                        <a href="#" class="item-news">
+                            <div class="item-news__bg" style="background-image: url(img/image-news.jpg)"></div>
+                            <div class="item-news__date">8 марта 2020 года</div>
+                            <div class="item-news__title">СтатьяНа территории эко-комплекса «Танай» состоялся зимний этап Спартакиады ХК «СДС»</div>
+                        </a>
+                    </div>
+                    
                 </div>
-                <div class="slider-news-arrows">
-                    <a href="#" class="slick-prev slick-arrow"></a>
-                    <a href="#" class="slick-next slick-arrow"></a>
-                </div>
+                <div class="slider-news js-slider-press-2"></div>
+                <div class="slider-num js-slider-num"><span>1</span>/4</div>
+                <div class="slider-news-arrows"></div>
             </div>
         </section>
         

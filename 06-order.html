@@ -120,7 +120,7 @@
                                     <div class="nice-input">
                                         <input type="text" name="email" class="nice-input__input nice-input__input-2" id="input-01" placeholder="Ваша электронная почта">                                        
                                     </div>
-                                    <button class="btn btn_sm btn_hover-blue">Получить лист</button>
+                                    <button class="btn btn_sm">Получить лист</button>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,6 @@
                             <th>Наименование</th>
                             <th>Характеристики</th>
                             <th>Количество</th>
-                            <th>Количество в коробке</th>
                             <th>Удалить</th>
                         </tr>
                     </thead>
@@ -184,13 +183,11 @@
                             <td data-title="Количество">
                                 <div class="calc-form">
                                     <a href="#" class="calc-form__btn calc-form__btn-minus">-</a> 
+                                    <span class="calc-form__text">5</span>
                                     <input type="text" class="calc-form__input" value="5">
                                     <a href="#" class="calc-form__btn calc-form__btn-plus">+</a>    
                                 </div>
-                            </td>
-                            <td data-title="Количество в коробке">
-                                <div class="table-cart__num">3</div>
-                            </td>
+                            </td>                            
                             <td>
                                 <a  href="#" class="table-cart__remove">
                                     <span class="icon-clear"></span>
@@ -241,12 +238,10 @@
                             <td data-title="Количество">
                                 <div class="calc-form">
                                     <a href="#" class="calc-form__btn calc-form__btn-minus">-</a> 
+                                    <span class="calc-form__text">5</span>
                                     <input type="text" class="calc-form__input" value="5">
                                     <a href="#" class="calc-form__btn calc-form__btn-plus">+</a>    
                                 </div>
-                            </td>
-                            <td data-title="Количество в коробке">
-                                <div class="table-cart__num">3</div>
                             </td>
                             <td>
                                 <a  href="#" class="table-cart__remove">
@@ -268,51 +263,60 @@
                         <img src="img/image-consult.png" alt="">
                     </div>
                     <div class="block-order__info">
-                        <div class="title title_white">Узнать сумму заказа</div>
-                        <div class="subtitle">Оформите заявку и наш менеджер свяжется с Вами для оценки вашего заказа</div>
-                        <div class="order-form">
-                            <form id="form-order" >
-                                <div class="form">
-                                    <div class="form-row">
-                                        <div class="form-col form-col_6">
-                                            <input type="text" name="name" class="form-input" placeholder="ФИО *">
+                        <div class="block-order__order"> 
+                            <div class="title title_white">Узнать сумму заказа</div>
+                            <div class="subtitle">Оформите заявку и наш менеджер свяжется с Вами для оценки вашего заказа</div>
+                            <div class="order-form">
+                                <form id="form-order" >
+                                    <div class="form">
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="name" class="form-input" placeholder="ФИО *">
+                                            </div>
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="email" class="form-input" placeholder="Электронная почта *">
+                                            </div>
                                         </div>
-                                        <div class="form-col form-col_6">
-                                            <input type="text" name="email" class="form-input" placeholder="Электронная почта *">
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="phone" class="form-input input-phone" placeholder="Номер телефона*">
+                                            </div>
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="inn" class="form-input" placeholder="ИНН *">
+                                            </div>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="work" class="form-input" placeholder="Род деятельности">
+                                            </div>
+                                            <div class="form-col form-col_6">
+                                                <div class="form-label">* - поля обязательные для заполнения</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-col">
+                                                <div class="form-privacy">Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-col form-col_6">
-                                            <input type="text" name="phone" class="form-input input-phone" placeholder="Номер телефона*">
-                                        </div>
-                                        <div class="form-col form-col_6">
-                                            <input type="text" name="inn" class="form-input" placeholder="ИНН *">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-col form-col_6">
-                                            <input type="text" name="work" class="form-input" placeholder="Род деятельности">
-                                        </div>
-                                        <div class="form-col form-col_6">
-                                            <div class="form-label">* - поля обязательные для заполнения</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-row">
-                                        <div class="form-col form-col_6">
-                                            <button class="btn btn_sm btn_white">Отправить заявку</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-col">
-                                            <div class="form-privacy">Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
-                                </form>
+                                    </form>
+                            </div>
+                        </div>
+                        <div class="block-order__thank">
+                            <div class="block-order__thank-wrapper">
+                                <div class="title title_white">Спасибо за заявку!</div>
+                                <div class="subtitle">Наш менеджер свяжется с Вами для оценки вашего заказа</div>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
                 
             </div>

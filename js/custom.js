@@ -228,6 +228,10 @@ $(document).ready(function(){
     
     /* NEWS SLIDER*/ 
     
+    if($('.js-slider-news').length){
+        
+    
+    
     options={
         infinite: false,
         arrows:true,
@@ -276,7 +280,103 @@ $(document).ready(function(){
         }
     });
  
+        
+    }
     /*END NEWS SLIDER*/
+    
+    
+    /* PRESS CENTER SLIDER*/ 
+    
+    if($('.js-slider-press').length){
+        
+    
+    
+    options={
+        infinite:true,
+        arrows:true,
+        dots:false,
+        rows:5,
+        slidesPerRow:2,
+        appendArrows:$('.slider-news-arrows'),
+        adaptiveHeight:true,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    rows:2,
+                    slidesPerRow:1,
+                }
+            }
+        ]
+    }
+    
+    $('.js-slider-press').slick(options);
+    $('.slider-press-tabs__item').on('click', function(element){
+        var f=$(this).attr('data-filter');          
+        if (typeof f !== typeof undefined && f !== false) {
+            if(!$(this).hasClass('active')){            
+                if(f!=0){                
+                    if($('.js-slider-press').hasClass('slick-initialized')){
+                        $('.js-slider-press').slick('unslick');
+                    }                
+                    if($('.js-slider-press-2').hasClass('slick-initialized')){
+                        $('.js-slider-press-2').slick('unslick');
+                    }              
+                    $('.js-slider-press').hide();
+                    $('.js-slider-press-2').show();
+                    $('.js-slider-press-2').html($('.js-slider-press').html());
+                    $('.js-slider-press-2').find('.slider-news__slide').not('.'+f).remove();      
+                    
+                    $('.js-slider-press-2').on('init', function(event, slick){                        
+                        $('.js-slider-num').html('<span>1</span>/'+slick.slideCount);
+                    });
+                    
+                    $('.js-slider-press-2').slick(options);    
+                }
+                else{
+                    $('.js-slider-press').show();
+                    $('.js-slider-press').on('init', function(event, slick){                        
+                        $('.js-slider-num').html('<span>1</span>/'+slick.slideCount);
+                    });
+                    $('.js-slider-press').slick(options);    
+                    $('.js-slider-press-2').hide();
+                }
+                $('.slider-press-tabs__item').removeClass('active');
+                $(this).addClass('active');
+            }       
+            return false; 
+        }
+    });
+        
+    $('.js-slider-press').on('afterChange', function(event, slick, currentSlide, nextSlide){        
+        var tt= $('#section-press').offset().top;	
+            var wid=window.innerWidth;
+			if (window.innerWidth >639){
+                $('html, body').animate({
+                    scrollTop: tt
+                }, 500);	
+            }
+   
+        
+        var i=currentSlide+1;
+        $('.js-slider-num span').html(i);
+    });
+        
+    $('.js-slider-press-2').on('afterChange', function(event, slick, currentSlide, nextSlide){        
+         var wid=window.innerWidth;
+			if (window.innerWidth >639){
+                $('html, body').animate({
+                    scrollTop: tt
+                }, 500);
+            }
+        
+        var i=currentSlide+1;
+        $('.js-slider-num span').html(i);
+    });
+ 
+        
+    }
+    /*END press SLIDER*/
     
     /*MOBILE MENU*/
      $('.mobile-trigger').on('click', function(event) {
@@ -873,10 +973,396 @@ $(document).ready(function(){
                 }								
 			},
             submitHandler: function(){
-                
+                $('.block-order__thank').show();
+                $('.block-order__order').css('opacity', '0');
             }
      });
     /* END SUBSCRIBE FORM VALIDATE*/
     
+    if($('.maps').length){
+        initMap();
+    }
+    
+    $('.js-gotomap').on('click', function(event) {        
+       var m=$(this).attr('href');
+        $('.map').removeClass('active');
+        $('.item-location').removeClass('active');
+        $(this).parents('.item-location').addClass('active');
+        $(m).addClass('active');
+        
+
+			var wid=window.innerWidth;
+			
+			if (window.innerWidth < 992){
+				var tt= $(m).offset().top;	
+                $('html, body').animate({
+                  scrollTop: tt
+                }, 1500);	
+			}			 		 
+				
      
+        
+        return false;        
+	});
+    
+    $('.js-all-employees').on('click', function(event) {    
+        if($(this).hasClass('active')){
+            $(this).prev('.block-employees').find('.block-employees__col:nth-child(n+3)').slideUp();
+            $(this).find('span').toggle();
+            $(this).removeClass('active');
+        }else{
+            $(this).prev('.block-employees').find('.block-employees__col').slideDown();
+            $(this).find('span').toggle();
+            $(this).addClass('active');
+        }
+      
+        return false;        
+	});
+    
+    $('.item-department__title').on('click', function(event) {    
+        $(this).parents('.item-department').toggleClass('active');
+        $(this).next('.item-department__content').slideToggle();
+        return false;
+    });
+    
+    
+    $('.js-link-more-filter').on('click', function(event) {    
+        if($(this).hasClass('active')){
+            $(this).prev('.filter-list').find('.filter-list-item:nth-child(n+6)').hide();
+            $(this).removeClass('active');
+        }else{
+            $(this).prev('.filter-list').find('.filter-list-item').show();
+            $(this).addClass('active');
+        }
+      
+        return false;        
+	});
+    
+    $('.calc-form__input').on('input', function () { $(this).prev('.calc-form__text').text($(this).val()); });
+    
  });
+
+
+function initMap() {
+    
+    const styledMapType = new google.maps.StyledMapType(
+        [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8ec3b9"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1a3646"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#4b6878"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#64779e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.province",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#4b6878"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.man_made",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#334e87"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#023e58"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#283d6a"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#6f9ba5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#023e58"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3C7680"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#304a7d"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#98a5be"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#2c6675"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#255763"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#b0d5ce"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#023e58"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#98a5be"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#283d6a"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3a4762"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#0e1626"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#4e6d70"
+      }
+    ]
+  }
+],
+        {
+            name: "Styled Map"
+        });
+    
+    const image = "img/icon-map.svg";
+    
+    const map1 = new google.maps.Map(document.getElementById("map-1"), {
+          zoom: 17,
+          center: {
+            lat: 56.9030306,
+            lng: 60.6113864
+          }
+    });
+        
+    const marker1 = new google.maps.Marker({
+          position: {
+            lat: 56.9030306,
+            lng: 60.6113864
+          },
+          map:map1,
+          icon: image
+    });
+    
+    map1.mapTypes.set("styled_map", styledMapType);
+    map1.setMapTypeId("styled_map");
+    
+    const map2 = new google.maps.Map(document.getElementById("map-2"), {
+          zoom: 17,
+          center: {
+            lat: 55.342833,
+            lng: 86.0990913
+          }
+    });
+        
+    const marker2 = new google.maps.Marker({
+          position: {
+            lat: 55.342833,
+            lng: 86.0990913
+          },
+          map:map2,
+          icon: image
+    });
+    
+    map2.mapTypes.set("styled_map", styledMapType);
+    map2.setMapTypeId("styled_map");
+    
+    const map3 = new google.maps.Map(document.getElementById("map-3"), {
+          zoom: 17,
+          center: {
+            lat: 56.845349,
+            lng: 35.9414963
+          }
+    });
+        
+    const marker3 = new google.maps.Marker({
+          position: {
+            lat: 56.845349,
+            lng: 35.9414963
+          },
+          map:map3,
+          icon: image
+    });
+    
+    map3.mapTypes.set("styled_map", styledMapType);
+    map3.setMapTypeId("styled_map");
+    
+    const map4 = new google.maps.Map(document.getElementById("map-4"), {
+          zoom: 17,
+          center: {
+            lat: 54.9982501,
+            lng: 82.8808023
+          }
+    });
+        
+    const marker4 = new google.maps.Marker({
+          position: {
+            lat: 54.9982501,
+            lng: 82.8808023
+          },
+          map:map4,
+          icon: image
+    });
+    
+    map4.mapTypes.set("styled_map", styledMapType);
+    map4.setMapTypeId("styled_map");
+    
+}
