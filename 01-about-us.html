@@ -37,7 +37,7 @@
                             </ul>
                     </div>
                     <div class="header-top__right">
-                        <a href="#" class="header-call"><span class="icon-phone"></span>Оставить заявку</a>
+                        <a href="#popup-callback" class="header-call" data-fancybox><span class="icon-phone"></span>Оставить заявку</a>
                         <a href="tel:88007757575" class="header-phone">8 800 775 75 75</a> 
                         <a href="#" class="btn header-btn">ИНТЕРНЕТ-МАГАЗИН</a>
                     </div>
@@ -1678,7 +1678,7 @@
              </ul>
             
             <div class="sidebar__contact">
-                <a href="#" class="header-call"><span class="icon-phone"></span>Оставить заявку</a>
+                <a href="#popup-callback" class="header-call" data-fancybox><span class="icon-phone"></span>Оставить заявку</a>
                 <a href="tel:88007757575" class="header-phone">8 800 775 75 75</a> 
             </div>
             
@@ -1687,6 +1687,63 @@
                 <button class="header-search__btn"><span class="icon-search"></span></button>
             </div>
          </div>         
+    </div>
+    
+    <div class="hidden">
+        <div class="popup popup-full" id="popup-callback">
+            <div class="wrapper">
+                <div class="title title_lg title_white">Оставить заявку</div>
+                <div class="title-subtitle">Оформите заявку и наш менеджер свяжется с Вами для оценки вашего заказа</div>
+                            <div class="order-form">
+                                <form id="form-callback" >
+                                    <div class="form">
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="name" class="form-input" placeholder="ФИО *">
+                                            </div>
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="email" class="form-input" placeholder="Электронная почта *">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="phone" class="form-input input-phone" placeholder="Номер телефона*">
+                                            </div>
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="inn" class="form-input" placeholder="ИНН *">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <input type="text" name="work" class="form-input" placeholder="Род деятельности">
+                                            </div>
+                                            <div class="form-col form-col_6">
+                                                <div class="form-label">* - поля обязательные для заполнения</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-col form-col_6">
+                                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-col">
+                                                <div class="form-privacy">Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </form>
+                            </div>
+            </div>
+        </div>
+        <div class="popup popup-full" id="popup-callback-thank">
+            <div class="wrapper">
+                <div class="title title_lg title_white">Спасибо за обращение!</div>
+                <div class="title-subtitle">Наш менеджер свяжется с вами в ближайшее время.</div>                            
+            </div>
+        </div>
     </div>
     
     <!-- BODY EOF   -->
@@ -1699,6 +1756,7 @@
     <script src="js/jquery.selectric.js?ver1.0"></script>
     <script src="js/nouislider.min.js?ver1.0"></script>
     <script src="js/jquery.fancybox.min.js?ver1.0"></script>
+    <script src="js/jquery.matchHeight-min.js?ver1.0"></script>
     <script src="js/custom.js"></script>
 </body>
 

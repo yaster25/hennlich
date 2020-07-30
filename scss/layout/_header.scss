@@ -287,6 +287,50 @@ body.menu-open .main-wrapper {
     left: 0;
 }
 
+.header-dark{
+    .nav{
+        color: $color-blue;
+    }
+    .top-nav{
+        color: rgba(1, 22, 52, 0.92);
+    }
+    .header-phone{
+        color: $color-blue;
+        &:hover{
+            color: $color-green;
+        }
+    }
+    .header-btn{
+        color: $color-blue;
+    }
+    .header-cart__link{
+        color: $color-blue;
+        &:hover{
+            color: $color-green;
+        }
+    }
+    .header-search__btn{
+        color: $color-blue;
+        &:hover{
+            color: $color-green;
+        }
+    }
+    .header-search__input{
+        color: $color-blue;
+        @include placeholder-color(rgba($color-blue, 0.3)); 
+        &:focus{
+            @include placeholder-color(transparent); 
+        }
+    }
+    .header-call:hover{
+        color: $color-blue;
+    }
+    .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
+        background: $color-blue;
+    }
+}
+
+
 @media screen and (max-width: 1780px) {
     .header-top{
         padding-left: 100px;

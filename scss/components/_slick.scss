@@ -1,5 +1,4 @@
 /* Slider */
-
 .slick-slider {
     position: relative;
     display: block;
@@ -200,7 +199,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-dots {
     position: absolute;
-    bottom: -5px;
+    bottom: 10px;
     list-style: none;
     display: block;
     padding: 0;
@@ -212,7 +211,7 @@ $slick-opacity-not-active: 0.25 !default;
         display: inline-block;
         height: 16px;
         width: 16px;
-       margin: 0 3px;
+        margin: 0 3px;
         padding: 0;
         cursor: pointer;
         
@@ -220,27 +219,27 @@ $slick-opacity-not-active: 0.25 !default;
             border: 0;
             background: transparent;
             display: block;
-            height: 12px;
-            width: 12px;
+            height: 9px;
+            width: 9px;
             outline: none;
             line-height: 0px;
             font-size: 0px;
             color: transparent;
             padding: 0px;
             cursor: pointer;
-            background: #292929;
-            border: 2px solid transparent;
+            background:#C0D1EC;
+            border: 3px solid transparent;
             border-radius: 50%;
             transition: $default-transition;
-            margin-top: 2px;
-            margin-left: 2px;
+            margin-top: 3px;
+            margin-left: 3px;
             &:hover{
-                background: $color-yellow;
+                background:  $color-blue;
             } 
         }
         &.slick-active button{
-            background: transparent;
-            border-color: $color-yellow;
+            background: $color-blue;
+            border-color:  $color-blue;
             margin: 0;
             width: 16px;
             height: 16px;

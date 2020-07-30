@@ -1040,7 +1040,292 @@ $(document).ready(function(){
     
     $('.calc-form__input').on('input', function () { $(this).prev('.calc-form__text').text($(this).val()); });
     
+    
+     /* CARRIER SLIDER*/ 
+    
+    if($('.js-slider-carrier').length){
+    
+        options={
+            infinite:true,
+            arrows:true,
+            dots:false,
+            rows:2,
+            slidesPerRow:2,
+            appendArrows:$('.slider-news-arrows'),
+            //adaptiveHeight:true,
+            responsive: [
+                {
+                    breakpoint: 640,
+                    settings: {
+                        rows:4,
+                        slidesPerRow:1,
+                    }
+                }
+            ]
+        }
+    
+        $('.js-slider-carrier').slick(options);
+        $('.js-slider-carrier').on('afterChange', function(event, slick, currentSlide, nextSlide){  
+            var i=currentSlide+1;
+            $('.js-slider-num span').html(i);
+        });
+        
+        $('.slider-carrier__slide').matchHeight();
+       
+        $(window).bind('resize orientationchange', function(event) { $('.slider-carrier__slide').matchHeight();});
+    }
+    /*END CARRIER SLIDER*/
+    
+     /* vacancy FORM VALIDATE*/
+    $("#form-vacancy").validate({
+         errorElement:'div',
+         errorPlacement: function(error, element) {
+            element.parent().append(error);
+        },
+			rules: {
+                name: "required",
+                surname: "required",
+				phone: "required" ,
+				email: {
+					required: true,
+					email: true
+				},
+                city: "required"
+			},
+			messages: {
+                name: "Необходимо заполнить «Имя».",
+                surname: "Необходимо заполнить «Фамилия».",
+				phone: "Необходимо заполнить «Телефон».",
+                city: "Необходимо заполнить «Индекс/город».",	
+				email: {
+                    required: "Необходимо заполнить «E-mail».",
+					email: "Введите корректный e-mail."
+                }								
+			},
+            submitHandler: function(){
+                $('.block-order__thank').show();
+                $('.block-order__order').css('opacity', '0');
+            }
+     });
+    /* END vacancy FORM VALIDATE*/
+    if($('.solution__title-btm').length){
+        $('.solution__title-btm').matchHeight();
+    }
+    
+    if($('.item-feature__title').length){
+        $('.item-feature__title').matchHeight();
+    }
+    
+    if($('.block-features__col').length){
+        $('.block-features__col').matchHeight();
+    }
+    
+    
+    $("#form-consult").validate({
+         errorElement:'div',
+         errorPlacement: function(error, element) {
+            element.parent().append(error);
+        },
+			rules: {
+				email: {
+					required: true,
+					email: true
+				}	               				
+			},
+			messages: {
+				email: {
+                    required: "Необходимо заполнить «E-mail».",
+					email: "Введите корректный e-mail."
+                }								
+			},
+            submitHandler: function(){}
+     });
+    
+    $("#form-project").validate({
+         errorElement:'div',
+         errorPlacement: function(error, element) {
+            element.parent().append(error);
+        },
+			rules: {
+                name: "required",
+				phone: "required" ,
+				email: {
+					required: true,
+					email: true
+				},
+                
+			},
+			messages: {
+                name: "Необходимо заполнить «ФИО».",
+				phone: "Необходимо заполнить «Телефон».",                
+				email: {
+                    required: "Необходимо заполнить «E-mail».",
+					email: "Введите корректный e-mail."
+                }								
+			},
+            submitHandler: function(){
+                
+            }
+     });
+    
+    /*  PRODUCTS SLIDER 2*/ 
+        $('.js-slider-products-2').each(function () {
+          $(this).slick({
+            infinite: true,
+            arrows:true,
+            dots:false,
+            slidesToShow:4,
+            slidesToScroll: 1,
+            appendArrows: $(this).parents('.slider-wrapper').find('.slider-arrows'),
+            swipeToSlide:true,
+            centerMode:false,
+            fade:false,
+            responsive: [   
+               {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 3
+                  }
+                },{
+                  breakpoint: 640,
+                  settings: {
+                    slidesToShow: 2
+                  }
+                }
+              ]
+        });
+    });
+     /* END PRODUCTS SLIDER 2*/ 
+    
+    
+    /* FEATURES SLIDER*/
+    
+    var $f_slider = $('.js-block-features');
+    var f_slider_settings = {infinite: false,
+        arrows:false,
+        dots:true,
+        slidesToShow:1,
+        slidesToScroll: 1,
+        variableWidth:true,   
+        swipeToSlide:true,
+        infinite:true,
+            responsive: [
+                {
+                  breakpoint: 9999,
+                  settings:"unslick" 
+                },
+                {
+                  breakpoint: 740,
+                  settings: {
+                    
+                  }
+                }
+              ]
+    };
+    
+    // Init Slider
+    
+    
+    
+    $f_slider.on('init', function(event, slick){
+        if($('.block-features__col').length){
+            $('.block-features__col').matchHeight();
+        }
+    });
+    
+    $f_slider.slick(f_slider_settings);
+
+    // Reslick only if it's not slick()
+    $(window).on('resize', function() {
+      if (!$f_slider.hasClass('slick-initialized')) {
+        return $f_slider.slick(f_slider_settings);
+      }
+    });
+  
+    /* END FEATURES SLIDER*/
+    
+     /* CALLBACK FORM VALIDATE*/
+    $("#form-callback").validate({
+         errorElement:'div',
+         errorPlacement: function(error, element) {
+            element.parent().append(error);
+        },
+			rules: {
+                name: "required",
+				phone: "required" ,
+				email: {
+					required: true,
+					email: true
+				}	    ,
+                inn: "required"
+			},
+			messages: {
+                name: "Необходимо заполнить «ФИО».",
+				phone: "Необходимо заполнить «Телефон».",
+                inn: "Необходимо заполнить «ИНН».",	
+				email: {
+                    required: "Необходимо заполнить «E-mail».",
+					email: "Введите корректный e-mail."
+                }								
+			},
+            submitHandler: function(){
+                $.fancybox.close();
+                $.fancybox.open({
+                    src  : '#popup-callback-thank',
+                    type : 'inline',
+                     touch: false,
+                    
+                });
+            }
+     });
+    /* END CALLBACK FORM VALIDATE*/
+    
+    $('[data-fancybox]').fancybox({
+        touch: false,
+        closeExisting: true,
+        autoFocus: false,
+        afterShow : function( instance, current ) {
+            
+        }
+    });
+    
+    
  });
+
+/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
+
+'use strict';
+
+;( function ( document, window, index )
+{
+	var inputs = document.querySelectorAll( '.inputfile' );
+	Array.prototype.forEach.call( inputs, function( input )
+	{
+		var label	 = input.nextElementSibling,
+			labelVal = label.innerHTML;
+
+		input.addEventListener( 'change', function( e )
+		{
+			var fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
+		});
+
+		// Firefox bug fix
+		input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+		input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+	});
+}( document, window, 0 ));
 
 
 function initMap() {
