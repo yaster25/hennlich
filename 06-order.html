@@ -107,25 +107,35 @@
         <section class="section-product section-order">
             <div class="wrapper">
                 
-                <div class="block-excel">
-                    <div class="block-excel__left">
-                        <div class="block-excel__title">Скачать "Заказной лист" в Excel</div>
-                        <div class="form-subtitle">Введите почту, на которую мы отправим вам  заказной лист</div>
-                    </div>
-                    <div class="block-excel__right">
-                        <form id="form-subscribe"  autocomplete="off">                       
-                        <div class="form">
-                            <div class="form-row">
-                                <div class="form-col form-col_subsribe">
-                                    <div class="nice-input">
-                                        <input type="text" name="email" class="nice-input__input nice-input__input-2" id="input-01" placeholder="Ваша электронная почта">                                        
+                <div class="block-excel">                    
+                    <div class="block-excel__form">
+                        <div class="block-excel__left">
+                            <div class="block-excel__title">Скачать "Заказной лист" в Excel</div>
+                            <div class="form-subtitle">Введите почту, на которую мы отправим вам  заказной лист</div>
+                        </div>
+                        <div class="block-excel__right">
+                            <form class="form-subscribe-3"  autocomplete="off">                       
+                            <div class="form">
+                                <div class="form-row">
+                                    <div class="form-col form-col_subsribe">
+                                        <div class="nice-input">
+                                            <input type="text" name="email" class="nice-input__input nice-input__input-2" placeholder="Ваша электронная почта"> 
+                                        </div>
+                                        <button class="btn btn_sm">Получить лист</button>
                                     </div>
-                                    <button class="btn btn_sm">Получить лист</button>
                                 </div>
                             </div>
+                        </form>
                         </div>
-                    </form>
                     </div>
+                    <div class="block-excel__thank">
+                        <div class="block-excel__left">
+                            <div class="block-excel__title">Заказной лист отправлен вам на почту!</div>
+                            <div class="form-subtitle">Если у вас возникнут вопросы - вы можете задать им нашим менеджерам.</div>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
                 
                 <table class="table-cart">
@@ -324,25 +334,30 @@
    
   
         <section class="section-subscribe form-white">
-            <div class="section-subscribe__left">
-                <div class="title title_white">Будь в курсе</div>
-                <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
-            </div>
-            <div class="section-subscribe__right">
-                <form id="form-subscribe"  autocomplete="off">                       
-                        <div class="form">
-                            <div class="form-row">
-                                <div class="form-col form-col_subsribe">
-                                    <div class="nice-input">
-                                        <input type="text" name="email" class="nice-input__input" id="input-01">
-                                        <label for="input-01" class="nice-input__label">Электронная почта</label>
+            <div class="section-subscribe__form">
+                <div class="section-subscribe__left">
+                    <div class="title title_white">Будь в курсе</div>
+                    <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
+                </div>
+                <div class="section-subscribe__right">
+                    <form class="form-subscribe-2"  autocomplete="off">                       
+                            <div class="form">
+                                <div class="form-row">
+                                    <div class="form-col form-col_subsribe">
+                                        <div class="nice-input">
+                                            <input type="text" name="email" class="nice-input__input" id="input-subscribe">
+                                            <label for="input-subscribe" class="nice-input__label">Электронная почта</label>
+                                        </div>
+                                        <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                     </div>
-                                    <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                 </div>
                             </div>
-                        </div>
                     </form>
+                </div>    
             </div>
+            <div class="section-subscribe__thank">
+                <div class="title title_white">Вы успешно подписались!</div>
+            </div> 
         </section>
      
         </main>
@@ -582,7 +597,7 @@
 
                                         <div class="form-row">
                                             <div class="form-col form-col_6">
-                                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                                                <button class="btn btn_sm btn_white btn_hover-green">Отправить заявку</button>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -615,6 +630,8 @@
     <script src="js/nouislider.min.js?ver1.0"></script>
     <script src="js/jquery.fancybox.min.js?ver1.0"></script>
     <script src="js/jquery.matchHeight-min.js?ver1.0"></script>
+    <script src="js/ResizeSensor.js?ver1.0"></script>
+    <script src="js/sticky-sidebar.js?ver1.0"></script>
     <script src="js/custom.js"></script>
 </body>
 

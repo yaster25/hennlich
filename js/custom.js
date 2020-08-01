@@ -438,24 +438,110 @@ $(document).ready(function(){
     
     
     /* PARTNERS FORM VALIDATE*/
-    $("#form-partners").validate({
-         errorElement:'div',
-         errorPlacement: function(error, element) {
-            element.parent().append(error);
-        },
-			rules: {
-				name: "required",
-				phone: "required"                				
-			},
-			messages: {
-				name: "Необходимо заполнить «Имя».",
-				phone: "Необходимо заполнить «Телефон»."							
-			},
-            submitHandler: function(){}
-     });
+    
+    $('.form-partners').each(function() {  
+        $(this).validate({       
+             errorElement:'div',
+             errorPlacement: function(error, element) {
+                element.parent().append(error);
+            },
+                rules: {
+                    name: "required",
+                    phone: "required"                				
+                },
+                messages: {
+                    name: "Необходимо заполнить «Имя».",
+                    phone: "Необходимо заполнить «Телефон»."							
+                },
+                submitHandler: function(form){
+                    $(form).parents('.partner-form').find('.partner-form__form').addClass('o-hide');
+                    $(form).parents('.partner-form').find('.partner-form__thank').addClass('o-show');
+
+                }
+         });
+    });
     /* END PARTNERS FORM VALIDATE*/
     
     /* SUBSCRIBE FORM VALIDATE*/
+    
+    $('.form-subscribe').each(function() {  
+        $(this).validate({       
+             errorElement:'div',
+             errorPlacement: function(error, element) {
+                    element.parent().append(error);
+             },
+            rules: {
+                email: {
+                        required: true,
+                        email: true
+                    }	               				
+                },
+                messages: {
+                    email: {
+                        required: "Необходимо заполнить «E-mail».",
+                        email: "Введите корректный e-mail."
+                    }								
+                },
+                submitHandler: function(form){
+                    $(form).parents('.press-form').find('.press-form__form').addClass('o-hide');
+                    $(form).parents('.press-form').find('.press-form__thank').addClass('o-show');
+
+                }
+         });
+    });
+    
+    $('.form-subscribe-2').each(function() {  
+        $(this).validate({       
+             errorElement:'div',
+             errorPlacement: function(error, element) {
+                    element.parent().append(error);
+             },
+            rules: {
+                email: {
+                        required: true,
+                        email: true
+                    }	               				
+                },
+                messages: {
+                    email: {
+                        required: "Необходимо заполнить «E-mail».",
+                        email: "Введите корректный e-mail."
+                    }								
+                },
+                submitHandler: function(form){
+                    $(form).parents('.section-subscribe').find('.section-subscribe__form').addClass('o-hide');
+                    $(form).parents('.section-subscribe').find('.section-subscribe__thank').addClass('o-show');
+
+                }
+         });
+    });
+     $('.form-subscribe-3').each(function() {  
+        $(this).validate({       
+             errorElement:'div',
+             errorPlacement: function(error, element) {
+                    element.parent().append(error);
+             },
+            rules: {
+                email: {
+                        required: true,
+                        email: true
+                    }	               				
+                },
+                messages: {
+                    email: {
+                        required: "Необходимо заполнить «E-mail».",
+                        email: "Введите корректный e-mail."
+                    }								
+                },
+                submitHandler: function(form){
+                    $(form).parents('.block-excel').find('.block-excel__form').addClass('o-hide');
+                    $(form).parents('.block-excel').find('.block-excel__thank').addClass('o-show');
+
+                }
+         });
+    });
+    
+    /*
     $("#form-subscribe").validate({
          errorElement:'div',
          errorPlacement: function(error, element) {
@@ -495,6 +581,7 @@ $(document).ready(function(){
 			},
             submitHandler: function(){}
      });
+     */
     
     /* END SUBSCRIBE FORM VALIDATE*/
     
@@ -854,17 +941,39 @@ $(document).ready(function(){
             event.preventDefault();		
             $('body').addClass('filter-open');
             $('.catalog-aside').addClass('catalog-aside-active');
+            
+            $('.filter-list').each(function(){
+                if(!$(this).hasClass('full')){
+                    var h=0;
+                    for(let i=1; i<6; i++){
+                        h=h+$(this).find('.filter-list-item:nth-child('+i+')').innerHeight();
+                    }          
+                    $(this).css('max-height', h + 'px');
+                }
+            });
+            
         }
 	});	
 
 	$('.js-filter-close').on('click', function(event) {        
         if($('body').hasClass('filter-open')){ 
             $('body').removeClass('filter-open');
-            $('.catalog-aside').removeClass('catalog-aside-active');		
+            $('.catalog-aside').removeClass('catalog-aside-active');	
+            
         }
         return false;        
 	});
      
+    /*$(document).bind("click touchstart",function(event) {
+        if ($(event.target).closest(".catalog-aside, .js-mobile-filter").length) return;
+         if($('body').hasClass('filter-open')){            
+            $('.catalog-aside').removeClass('catalog-aside-active');	
+            $('body').removeClass('filter-open');
+             return false;
+        }
+
+        event.stopPropagation();
+      });*/
  
     /* mobile filter*/
     
@@ -1025,18 +1134,47 @@ $(document).ready(function(){
         return false;
     });
     
+    $('.filter-list').each(function(event) {   
+        var h=0;
+        for(let i=1; i<6; i++){
+            h=h+$(this).find('.filter-list-item:nth-child('+i+')').innerHeight();
+        }          
+        $(this).css('max-height', h + 'px');
+        return false;        
+	});
+    
     
     $('.js-link-more-filter').on('click', function(event) {    
         if($(this).hasClass('active')){
-            $(this).prev('.filter-list').find('.filter-list-item:nth-child(n+6)').hide();
+            var h=0;
+            for(let i=1; i<6; i++){
+                h=h+$(this).prev('.filter-list').find('.filter-list-item:nth-child('+i+')').innerHeight();
+            }          
+            $(this).prev('.filter-list').css('max-height', h + 'px');
+            $(this).prev('.filter-list').removeClass('full');
             $(this).removeClass('active');
         }else{
-            $(this).prev('.filter-list').find('.filter-list-item').show();
+            
+            $(this).prev('.filter-list').addClass('full');
+            $(this).prev('.filter-list').css('max-height', '1000px');
             $(this).addClass('active');
         }
       
         return false;        
 	});
+    
+    $(window).bind('resize orientationchange', function(event) { 
+        $('.filter-list').each(function(){
+            if(!$(this).hasClass('full')){
+                var h=0;
+                for(let i=1; i<6; i++){
+                    h=h+$(this).find('.filter-list-item:nth-child('+i+')').innerHeight();
+                }          
+                $(this).css('max-height', h + 'px');
+            }
+        });
+        
+    });
     
     $('.calc-form__input').on('input', function () { $(this).prev('.calc-form__text').text($(this).val()); });
     
@@ -1102,9 +1240,9 @@ $(document).ready(function(){
 					email: "Введите корректный e-mail."
                 }								
 			},
-            submitHandler: function(){
-                $('.block-order__thank').show();
-                $('.block-order__order').css('opacity', '0');
+            submitHandler: function(form){
+                $(form).parents('.vacancy-form').find('.vacancy-form__form').addClass('o-hide');
+                $(form).parents('.vacancy-form').find('.vacancy-form__thank').addClass('o-show');
             }
      });
     /* END vacancy FORM VALIDATE*/
@@ -1138,7 +1276,10 @@ $(document).ready(function(){
 					email: "Введите корректный e-mail."
                 }								
 			},
-            submitHandler: function(){}
+            submitHandler: function(form){
+                $(form).parents('.consult-form').find('.consult-form__form').addClass('o-hide');
+                $(form).parents('.consult-form').find('.consult-form__thank').addClass('o-show');
+            }
      });
     
     $("#form-project").validate({
@@ -1163,8 +1304,9 @@ $(document).ready(function(){
 					email: "Введите корректный e-mail."
                 }								
 			},
-            submitHandler: function(){
-                
+            submitHandler: function(form){
+                $(form).parents('.partner-form').find('.partner-form__form').addClass('o-hide');
+                $(form).parents('.partner-form').find('.partner-form__thank').addClass('o-show');
             }
      });
     
@@ -1288,6 +1430,40 @@ $(document).ready(function(){
             
         }
     });
+    
+    $('.js-popup-close').on('click', function(event) {    
+        $.fancybox.close();
+        return false;
+    });
+    
+    if($('#aside-filter').length){       
+        
+         var asidefilter = document.getElementById('aside-filter');
+         
+          var stickySidebar = new StickySidebar('#aside-filter', {
+            topSpacing: 20,
+            bottomSpacing: 20,
+            minWidth: 740
+           // containerSelector: '.section-aside',
+           // innerWrapperSelector: '.aside-inner'
+          });
+     }
+    
+   $('.js-link-more-text').on('click', function(event) {    
+        if($(this).hasClass('active')){             
+            $(this).prev('.text-overflow').removeClass('full');
+            $(this).removeClass('active');
+        }else{            
+            $(this).prev('.text-overflow').addClass('full');
+            $(this).addClass('active');
+            var tt= $('#product-info').offset().top;	
+            $('html, body').animate({
+                scrollTop: tt
+            }, 1000);
+        }
+      
+        return false;        
+	});
     
     
  });

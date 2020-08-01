@@ -52,7 +52,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-bg {
-    background: rgb(0, 0, 0);
+    background: $color-blue;
     opacity: 0;
     transition-duration: inherit;
     transition-property: opacity;
@@ -60,7 +60,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-is-open .fancybox-bg {
-    opacity: .15;
+    opacity: .56;
     transition-timing-function: cubic-bezier(.22, .61, .36, 1);
 }
 
@@ -408,6 +408,7 @@ body.compensate-for-scrollbar {
     right: -12px;
     top: -44px;
     z-index: 401;
+    @include transition($default-transition);
 }
 
 .fancybox-close-small:hover {

@@ -144,9 +144,19 @@
                     </div>
                     <div class="single-product__right">
                         <div class="single-product__info">
-                            <div class="product-info">
+                            <div class="product-info" id="product-info">
                                 <div class="product-info__title">Описание</div>
-                                <div class="product-info__text">Электромагнитные мембранные дозирующие насосы Sera. Экономически эффективный продукт, обеспечивающим надежное дозирование без утечек в окружающей среде. Материал мембраны совместим с перекачиваемой жидкостью, такой как EPDM (Hypalon®), FPM (Viton®) и EPDM с покрытием PTFE (Teflon®), что гарантирует максимальную химическую стойкость. Для некоторых моделей мембраны и уплотнения доступны в соответствии с требованиями FDA</div>                            
+                                <div class="product-info__text text-overflow">
+                                    <p>Электромагнитные мембранные дозирующие насосы Sera. Экономически эффективный продукт, обеспечивающим надежное дозирование без утечек в окружающей среде. Материал мембраны совместим с перекачиваемой жидкостью, такой как EPDM (Hypalon®), FPM (Viton®) и EPDM с покрытием PTFE (Teflon®), что гарантирует максимальную химическую стойкость. Для некоторых моделей мембраны и уплотнения доступны в соответствии с требованиями FDA</p>
+                                    <p>Электромагнитные мембранные дозирующие насосы Sera. Экономически эффективный продукт, обеспечивающим надежное дозирование без утечек в окружающей среде. Материал мембраны совместим с перекачиваемой жидкостью, такой как EPDM (Hypalon®), FPM (Viton®) и EPDM с покрытием PTFE (Teflon®), что гарантирует максимальную химическую стойкость. Для некоторых моделей мембраны и уплотнения доступны в соответствии с требованиями FDA</p>
+                                    <p>Электромагнитные мембранные дозирующие насосы Sera. Экономически эффективный продукт, обеспечивающим надежное дозирование без утечек в окружающей среде. Материал мембраны совместим с перекачиваемой жидкостью, такой как EPDM (Hypalon®), FPM (Viton®) и EPDM с покрытием PTFE (Teflon®), что гарантирует максимальную химическую стойкость. Для некоторых моделей мембраны и уплотнения доступны в соответствии с требованиями FDA</p>
+                                </div> 
+                                
+                                <a href="#" class="link-more link-more-filter js-link-more-text">
+                                    <span class="show">ПОКАЗАТЬ ЕЩЁ</span>
+                                    <span class="hide">СВЕРНУТЬ</span>
+                                    <i class="icon-arrow-right"></i>
+                                </a>
                             </div>
                             <ul class="product-char">
                                 <li>
@@ -166,7 +176,7 @@
                                 </li>
                             </ul>
                             <div class="product-btns">
-                                <a href="#" class="btn btn_sm">В заказной лист</a>
+                                <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                 <a href="#" class="btn btn_sm btn_grey"><span class="icon-download"></span>Скачать PDF чертежи</a>
                             </div>
                         </div>
@@ -455,25 +465,30 @@
    
   
         <section class="section-subscribe form-white">
-            <div class="section-subscribe__left">
-                <div class="title title_white">Будь в курсе</div>
-                <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
-            </div>
-            <div class="section-subscribe__right">
-                <form id="form-subscribe"  autocomplete="off">                       
-                        <div class="form">
-                            <div class="form-row">
-                                <div class="form-col form-col_subsribe">
-                                    <div class="nice-input">
-                                        <input type="text" name="email" class="nice-input__input" id="input-01">
-                                        <label for="input-01" class="nice-input__label">Электронная почта</label>
+            <div class="section-subscribe__form">
+                <div class="section-subscribe__left">
+                    <div class="title title_white">Будь в курсе</div>
+                    <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
+                </div>
+                <div class="section-subscribe__right">
+                    <form class="form-subscribe-2"  autocomplete="off">                       
+                            <div class="form">
+                                <div class="form-row">
+                                    <div class="form-col form-col_subsribe">
+                                        <div class="nice-input">
+                                            <input type="text" name="email" class="nice-input__input" id="input-subscribe">
+                                            <label for="input-subscribe" class="nice-input__label">Электронная почта</label>
+                                        </div>
+                                        <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                     </div>
-                                    <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                 </div>
                             </div>
-                        </div>
                     </form>
+                </div>    
             </div>
+            <div class="section-subscribe__thank">
+                <div class="title title_white">Вы успешно подписались!</div>
+            </div> 
         </section>
      
         </main>
@@ -713,7 +728,7 @@
 
                                         <div class="form-row">
                                             <div class="form-col form-col_6">
-                                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                                                <button class="btn btn_sm btn_white btn_hover-green">Отправить заявку</button>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -733,6 +748,13 @@
                 <div class="title-subtitle">Наш менеджер свяжется с вами в ближайшее время.</div>                            
             </div>
         </div>
+        <div class="popup popup-sm" id="popup-added">
+            <div class="title title_sm">Товар добавлен в заказной лист!</div>
+            <div class="popup-btns">
+                <a href="#" class="btn btn_sm">Перейти в заказной лист</a>
+                <a href="#" class="btn btn_sm btn_grey js-popup-close">Продолжить покупки</a>
+            </div>
+        </div>
     </div>
     
     <!-- BODY EOF   -->
@@ -746,6 +768,8 @@
     <script src="js/nouislider.min.js?ver1.0"></script>
     <script src="js/jquery.fancybox.min.js?ver1.0"></script>
     <script src="js/jquery.matchHeight-min.js?ver1.0"></script>
+    <script src="js/ResizeSensor.js?ver1.0"></script>
+    <script src="js/sticky-sidebar.js?ver1.0"></script>
     <script src="js/custom.js"></script>
 </body>
 

@@ -490,38 +490,44 @@
                 <a href="#" class="btn btn_sm btn_white-transp">Все решения</a>
             </div>
             <div class="section-find__right">
-                <div class="partner-form find-form">
-                    <form id="form-partners" autocomplete="off">
-                    <div class="form form-white-2">
-                        <div class="form-title">Оставьте заявку</div>
-                        <div class="form-row form-row_sm">
-                            <div class="form-col">
-                                <div class="nice-input">
-                                    <input type="text" name="name" class="nice-input__input" id="input-01">
-                                    <label for="input-01" class="nice-input__label">Имя</label>
+                <div class="partner-form find-form form-white">
+                    <div class="partner-form__form">
+                        <form class="form-partners"  autocomplete="off">
+                            <div class="form form-white-2">
+                                <div class="form-title">Присоединяйся</div>
+                                <div class="form-row form-row_sm">
+                                    <div class="form-col">
+                                        <div class="nice-input">
+                                            <input type="text" name="name" class="nice-input__input" id="input-01">
+                                            <label for="input-01" class="nice-input__label">Имя</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row form-row_sm">
+                                    <div class="form-col">
+                                        <div class="nice-input">
+                                            <input type="text" name="phone" class="nice-input__input input-phone" id="input-02">
+                                            <label for="input-02" class="nice-input__label">Телефон</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row form-row_sm">
+                                    <div class="form-col">
+                                        <button class="btn btn_sm">Начать переговоры</button>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-col">
+                                        <div class="form-privacy">Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row form-row_sm">
-                            <div class="form-col">
-                                <div class="nice-input">
-                                    <input type="text" name="phone" class="nice-input__input input-phone" id="input-02">
-                                    <label for="input-02" class="nice-input__label">Телефон</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row form-row_sm">
-                            <div class="form-col">
-                                <button class="btn btn_sm">Начать переговоры</button>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-col">
-                                <div class="form-privacy">Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-                    </form>
+                    <div class="partner-form__thank">
+                        <div class="form-title">Спасибо за обращение в компанию Hennlich! </div>
+                        <div class="form-subtitle form-subtitle-2">Наш менеджер свяжется с вами в ближайшее время.</div>
+                    </div>
                     
                 </div>
             </div>
@@ -892,25 +898,30 @@
         </section>
         
         <section class="section-subscribe form-white">
-            <div class="section-subscribe__left">
-                <div class="title title_white">Будь в курсе</div>
-                <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
-            </div>
-            <div class="section-subscribe__right">
-                <form id="form-subscribe"  autocomplete="off">                       
-                        <div class="form">
-                            <div class="form-row">
-                                <div class="form-col form-col_subsribe">
-                                    <div class="nice-input">
-                                        <input type="text" name="email" class="nice-input__input" id="input-01">
-                                        <label for="input-01" class="nice-input__label">Электронная почта</label>
+            <div class="section-subscribe__form">
+                <div class="section-subscribe__left">
+                    <div class="title title_white">Будь в курсе</div>
+                    <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
+                </div>
+                <div class="section-subscribe__right">
+                    <form class="form-subscribe-2"  autocomplete="off">                       
+                            <div class="form">
+                                <div class="form-row">
+                                    <div class="form-col form-col_subsribe">
+                                        <div class="nice-input">
+                                            <input type="text" name="email" class="nice-input__input" id="input-subscribe">
+                                            <label for="input-subscribe" class="nice-input__label">Электронная почта</label>
+                                        </div>
+                                        <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                     </div>
-                                    <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                 </div>
                             </div>
-                        </div>
                     </form>
+                </div>    
             </div>
+            <div class="section-subscribe__thank">
+                <div class="title title_white">Вы успешно подписались!</div>
+            </div> 
         </section>
      
         </main>
@@ -1150,7 +1161,7 @@
 
                                         <div class="form-row">
                                             <div class="form-col form-col_6">
-                                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                                                <button class="btn btn_sm btn_white btn_hover-green">Отправить заявку</button>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -1183,6 +1194,8 @@
     <script src="js/nouislider.min.js?ver1.0"></script>
     <script src="js/jquery.fancybox.min.js?ver1.0"></script>
     <script src="js/jquery.matchHeight-min.js?ver1.0"></script>
+    <script src="js/ResizeSensor.js?ver1.0"></script>
+    <script src="js/sticky-sidebar.js?ver1.0"></script>
     <script src="js/custom.js"></script>
 </body>
 

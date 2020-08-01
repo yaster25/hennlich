@@ -106,7 +106,7 @@
         
         <section class="section-catalog-inside">
             <div class="wrapper">
-                <div class="catalog-aside">
+                <div class="catalog-aside"  id="aside-filter">
                     <div class="catalog-aside__title">
                         <a href="#" class="filter-close js-filter-close">
                             <span class="icon-clear"></span>
@@ -120,6 +120,7 @@
                             Насосы
                             <a href="#" class="remove icon-clear"></a>
                         </li>
+                        <a href="#" class="list-labels__link">ОЧистить фильтр</a>
                     </ul>
                     
                     <div class="filter-body">
@@ -246,7 +247,11 @@
                         </div>
                     
                     </div>
-                            
+                    
+                    <div class="catalog-aside__btns">
+                        <a href="#" class="btn btn_sm">Показать 906 товаров</a>
+                        <a href="#" class="list-labels__link">ОЧистить фильтр</a>
+                    </div>
                     
                 </div>
                 <div class="catalog-content">
@@ -291,7 +296,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -314,7 +319,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -337,7 +342,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -360,7 +365,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -383,7 +388,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -406,7 +411,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -429,7 +434,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-product__btns">
-                                    <a href="#" class="btn btn_sm">В заказной лист</a>
+                                    <a href="#popup-added" class="btn btn_sm" data-fancybox>В заказной лист</a>
                                     <a href="#" class="link-more">Подробнее <span class="icon-arrow-right"></span></a>
                                 </div>                                
                             </div>
@@ -519,25 +524,30 @@
         </section>
         
         <section class="section-subscribe form-white">
-            <div class="section-subscribe__left">
-                <div class="title title_white">Будь в курсе</div>
-                <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
-            </div>
-            <div class="section-subscribe__right">
-                <form id="form-subscribe"  autocomplete="off">                       
-                        <div class="form">
-                            <div class="form-row">
-                                <div class="form-col form-col_subsribe">
-                                    <div class="nice-input">
-                                        <input type="text" name="email" class="nice-input__input" id="input-01">
-                                        <label for="input-01" class="nice-input__label">Электронная почта</label>
+            <div class="section-subscribe__form">
+                <div class="section-subscribe__left">
+                    <div class="title title_white">Будь в курсе</div>
+                    <div class="form-subtitle form-subtitle-2">Никакого спама, только полезная информация</div>
+                </div>
+                <div class="section-subscribe__right">
+                    <form class="form-subscribe-2"  autocomplete="off">                       
+                            <div class="form">
+                                <div class="form-row">
+                                    <div class="form-col form-col_subsribe">
+                                        <div class="nice-input">
+                                            <input type="text" name="email" class="nice-input__input" id="input-subscribe">
+                                            <label for="input-subscribe" class="nice-input__label">Электронная почта</label>
+                                        </div>
+                                        <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                     </div>
-                                    <button class="btn btn_sm btn_white-transp">Подписаться</button>
                                 </div>
                             </div>
-                        </div>
                     </form>
+                </div>    
             </div>
+            <div class="section-subscribe__thank">
+                <div class="title title_white">Вы успешно подписались!</div>
+            </div> 
         </section>
      
         </main>
@@ -777,7 +787,7 @@
 
                                         <div class="form-row">
                                             <div class="form-col form-col_6">
-                                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                                                <button class="btn btn_sm btn_white btn_hover-green">Отправить заявку</button>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -797,6 +807,15 @@
                 <div class="title-subtitle">Наш менеджер свяжется с вами в ближайшее время.</div>                            
             </div>
         </div>
+        
+        
+        <div class="popup popup-sm" id="popup-added">
+            <div class="title title_sm">Товар добавлен в заказной лист!</div>
+            <div class="popup-btns">
+                <a href="#" class="btn btn_sm">Перейти в заказной лист</a>
+                <a href="#" class="btn btn_sm btn_grey js-popup-close">Продолжить покупки</a>
+            </div>
+        </div>
     </div>
     
     <!-- BODY EOF   -->
@@ -810,6 +829,8 @@
     <script src="js/nouislider.min.js?ver1.0"></script>
     <script src="js/jquery.fancybox.min.js?ver1.0"></script>
     <script src="js/jquery.matchHeight-min.js?ver1.0"></script>
+    <script src="js/ResizeSensor.js?ver1.0"></script>
+    <script src="js/sticky-sidebar.js?ver1.0"></script>
     <script src="js/custom.js"></script>
 </body>
 
