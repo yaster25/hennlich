@@ -143,7 +143,7 @@
                     <div class="slider-carrier__slide">
                         <div class="item-location item-carrier item-carrier-all">
                             <div class="title title_white title_sm">Хочу в вашу дружную команду!</div>
-                            <a href="#" class="btn btn_sm btn_white-transp">Отправить резюме</a>
+                            <a href="#" class="btn btn_sm btn_white-transp js-vacancy">Отправить резюме</a>
                         </div>
                     </div>
                     <div class="slider-carrier__slide">
@@ -179,7 +179,7 @@
                     <div class="slider-carrier__slide">
                         <div class="item-location item-carrier item-carrier-all">
                             <div class="title title_white title_sm">Хочу в вашу дружную команду!</div>
-                            <a href="#" class="btn btn_sm btn_white-transp">Отправить резюме</a>
+                            <a href="#" class="btn btn_sm btn_white-transp js-vacancy">Отправить резюме</a>
                         </div>
                     </div>
                 </div>
@@ -475,6 +475,84 @@
         </div>
     </div>
     
+    <div class="fixed-panel" id="fixed-panel">
+        <a href="#" class="fixed-panel__close"></a>
+        <div class="fixed-panel__inner">
+             <div class="vacancy-form form-white form-white-2">
+                    <div class="vacancy-form__form">
+                        <form id="form-vacancy"  autocomplete="off">
+                    <div class="form-title">Оставьте резюме</div>
+                        <div class="form-subtitle">И наш менеджер свяжется с вами для оценки заказа</div>
+                    <div class="form">
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <div class="nice-input">
+                                    <input type="text" name="name" class="nice-input__input" id="input-01-v">
+                                    <label for="input-01-v" class="nice-input__label">Имя</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <div class="nice-input">
+                                    <input type="text" name="surname" class="nice-input__input" id="input-02-v">
+                                    <label for="input-02-v" class="nice-input__label">Фамилия</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <div class="nice-input">
+                                    <input type="text" name="email" class="nice-input__input" id="input-03-v">
+                                    <label for="input-03-v" class="nice-input__label">Электронная почта</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <div class="nice-input">
+                                    <input type="text" name="phone" class="nice-input__input input-phone" id="input-04-v">
+                                    <label for="input-04-v" class="nice-input__label">Телефон</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <div class="nice-input">
+                                    <input type="text" name="city" class="nice-input__input" id="input-05-v">
+                                    <label for="input-05-v" class="nice-input__label">Почтовый индекс/город</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <div class="nice-fileinput">
+                                    <input type="file" name="file-1" id="file-1" class="inputfile">
+                                    <label for="file-1"><i class="icon-attach"></i><span>Прикрепить резюме</span></label>
+                                </div>
+                                <div class="nice-fileinput">
+                                    <input type="file" name="file-2" id="file-2" class="inputfile">
+                                    <label for="file-2"><i class="icon-attach"></i><span>Прикрепить фото</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row_sm">
+                            <div class="form-col">
+                                <button class="btn btn_sm btn_white">Отправить заявку</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                    </div>
+                    <div class="vacancy-form__thank">
+                        <div class="form-title">Спасибо за обращение в компанию Hennlich! </div>
+                        <div class="form-subtitle form-subtitle-2">Наш менеджер свяжется с вами в ближайшее время.</div>
+                    </div>
+                </div>   
+        </div>
+    </div>
+        
+    
     <!-- BODY EOF   -->
     <script src="js/jquery-3.0.0.min.js?ver1.0"></script>
     <script src="js/jquery-migrate-1.4.1.min.js?ver1.0"></script>
@@ -489,6 +567,7 @@
     <script src="js/ResizeSensor.js?ver1.0"></script>
     <script src="js/sticky-sidebar.js?ver1.0"></script>
     <script src="js/custom.js"></script>
+    <script src="js/custom2.js"></script>
 </body>
 
 </html>

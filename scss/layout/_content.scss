@@ -9067,3 +9067,106 @@ body.filter-open {
     }
 }
 
+
+
+.fixed-panel{
+    position: fixed;
+    top: 0;
+   // left: 105%;
+    right: -105%;
+    bottom: 0;
+    transition: all 0.6s;
+    background: $color-green;
+    z-index: 999999;
+    overflow: hidden;
+    width: 28.75%;
+    .title{
+        color: #FFFFFF;
+        margin-bottom: 35px;
+    }
+}
+.fixed-panel__inner{
+    position: relative;
+    padding: 0px 80px 0px 80px;
+    max-width: 100%;
+    top:100px;
+    overflow: auto;
+    bottom: 0;
+    max-height: calc(100vh - 100px);
+}
+
+.fixed-panel.active{    
+    right: 0;
+}
+.fixed-panel__close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: url('../img/icon-close.svg') no-repeat;
+    width: 28px;
+    height: 28px;
+    z-index: 999;
+    background-size: contain;
+    &:hover{
+        opacity: 0.75;
+    }
+}
+
+body.v-open {
+    overflow: hidden;
+}
+body.v-open .main-wrapper {
+    overflow: hidden;
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9991;
+        width: 100%;
+        height: 100%;
+       // opacity: 0;
+        background: rgba(1, 22, 52, 0.72);
+    }
+}
+.fixed-panel{
+    .vacancy-form__form.o-hide{
+        display: none;
+    }
+    .vacancy-form__thank{
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1780px) {
+    .fixed-panel__inner{
+        padding: 0px 50px 0px 50px;
+        top: 75px;
+        max-height: calc(100vh - 75px);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .fixed-panel__inner{
+        padding: 0px 25px 0px 25px;
+        top: 50px;
+        max-height: calc(100vh - 50px);
+    }
+    .fixed-panel__close{
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width: 991px){
+    .fixed-panel{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 640px){
+    .fixed-panel{
+        width: 100%;
+    }
+}
