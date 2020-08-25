@@ -9188,3 +9188,85 @@ body.v-open .main-wrapper {
         width: 100%;
     }
 }
+
+.header-search{
+    padding:0;
+    &__input{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &__btn{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    #title-search{
+        height: calc(100% - 2px);
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 40px;
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        form{
+            @include flexbox;
+            @include justify-content(space-between);
+            @include align-items(center);
+            display: block;
+            width: 100%;
+        }
+    }
+    #title-search-catalog{
+        height: calc(100% - 4px);
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 20px;
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        margin: -1px -1px;
+        width: calc(100% + 2px) !important;
+        form{
+            @include flexbox;
+            @include justify-content(space-between);
+            @include align-items(center);
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.title-search-result a:hover{
+    color:$color-green;
+    color: #7AC185;
+}
+.title-search-result .all_result a{
+    border: 1px solid #7AC185;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 0 45px;
+    height: 68px;
+    background: #7AC185;
+    color: #fff;
+    line-height: 66px;
+    display: inline-block;
+    transition: all 0.2s linear;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: none;
+    height: 44px;
+    line-height: 42px;
+    font-size: 14px;
+    padding: 0 38px;
+    &:hover{
+        background: #5BA867;
+        border-color: #5BA867;
+    }
+}
+.form-search .header-search{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.title-search-result {
+    border: 0.6px solid #C0D1EC !important;
+}
