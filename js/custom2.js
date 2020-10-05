@@ -81,6 +81,63 @@ $(document).ready(function(){
          
          
      }
+    
+    $('.js-link-more-list').on('click', function(event) {    
+        if($(this).hasClass('active')){             
+            $(this).prev('.text-overflow').removeClass('full');
+            $(this).removeClass('active');
+        }else{            
+            $(this).prev('.text-overflow').addClass('full');
+            $(this).addClass('active');
+            var tt= $('#product-chars').offset().top;	
+            $('html, body').animate({
+                scrollTop: tt
+            }, 1000);
+        }
+      
+        return false;        
+	});
+    
+    /*$('.tooltip').tooltipster({
+        contentAsHTML: true,
+        trigger:'click',
+        side:'bottom',
+        theme: ['tooltipster-noir']
+    });*/
+    
+    $.extend(Tipped.Skins, {
+          'light': {
+            radius: false,
+            shadow: false
+          }
+        });
+    
+    Tipped.create('.tooltip', { 
+        position: 'bottomleft' ,
+        showOn: 'click',
+        hideOn: 'click',
+        hideOnClickOutside: true,
+         skin: 'light',
+         stem: false,
+         offset: { x: -10 },
+        afterHide: function(content, element) {
+           $(element).removeClass('opened');
+          console.log('Hidden tooltip for:', element);
+        }
+    });
+    
+    
+    $('.char-select-list-item__link').on('click', function(event) {    
+        var t=$(this).text();
+        var id=$(this).parents('.char-select-list').attr('data-id');
+        $('.char-select[data-id="'+id+'"]').text(t);
+        Tipped.hideAll();
+        $('.char-select').removeClass('opened');
+        return false;        
+	});
 		
+    $('.char-select').on('click', function(event) {    
+       $(this).toggleClass('opened') ;
+    });
     
  });

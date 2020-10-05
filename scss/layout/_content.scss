@@ -2909,7 +2909,7 @@ body.filter-open {
     }
 }
 .product-info{
-    padding-bottom: 35px;
+    padding-bottom: 40px;
     &__title{
         font-size: 14px;
         line-height: 21px;
@@ -2923,13 +2923,14 @@ body.filter-open {
         line-height: 1.65;
         max-width: 540px;
         color: $color-blue;
-        max-height: 180px;
-        margin-bottom: 20px;
+        max-height: 165px;
+        margin-bottom: 0px;
         overflow: hidden;
         transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
         &.full {
             max-height: 5000px !important;
             transition: max-height 1s ease-in-out;
+            margin-bottom: 20px;
         }
         p{
             padding-bottom: 25px;
@@ -5837,7 +5838,6 @@ body.filter-open {
         max-height: 135px;
     }
     .product-info {
-        padding-bottom: 30px;
         .link-more-filter{
             margin-bottom: 0;
         }
@@ -7035,7 +7035,6 @@ body.filter-open {
     }
     .product-info__text{
         max-width: 100%;
-        max-height: 155px;
     }
     .product-char li span:nth-child(1){
         width: 250px;
@@ -8391,9 +8390,6 @@ body.filter-open {
         font-size: 14px;
         line-height: 26px;
     }
-    .product-char{
-        padding-bottom: 35px;
-    }
     .product-char li span:nth-child(1) {
         width: 170px;
         font-size: 12px;
@@ -9545,4 +9541,189 @@ body.v-open .main-wrapper {
 
 div.title-search-result {
     border: 0.6px solid #C0D1EC !important;
+}
+
+.product-title{
+    font-size: 35px;
+    line-height: 41px;
+    color: #011634;
+    margin-bottom: 40px;
+        margin-top: -10px;
+}
+.product-char-block{
+    margin-bottom: 40px;
+    position: relative;
+}
+.product-char.text-overflow{
+    max-height: 190px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    
+    &:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 54px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 85.94%);
+    }
+    &.full {
+        max-height: 5000px !important;
+        transition: max-height 1s ease-in-out;
+        &:after{
+            display: none;
+        }
+    }
+}
+
+.product-info__text.text-overflow{
+    position: relative;
+    &:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 54px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 85.94%);
+    }
+    &.full {
+        &:after{
+            display: none;
+        }
+    }
+}
+
+.product-chosen{
+    border-top: 1px solid #C0D1EC;
+    padding-top: 45px;
+    margin-bottom: 20px;
+    max-width: 655px;
+}
+
+.product-char-block{
+    
+}
+
+.char-select{
+    display: inline-block;
+    border-bottom: 1px solid #A1ADBF;
+    position: relative;
+    cursor: pointer;
+    &:after{
+        content: "\e90d";
+        font-family: "icomoon";
+        color: #A1ADBF;
+        position: absolute;
+        right: -18px;
+        top: 50%;
+        margin-top: -12px;
+        font-size: 6px;
+    }
+    &:hover{
+        color: $color-green;
+        border-color: $color-green;
+        &:after{
+            color: $color-green;
+        }
+    }
+    &.opened{
+         color: $color-green;
+        border-color:transparent !important;
+        &:after{
+            color: $color-green;
+        }
+    }
+}
+.char-select-list{
+    background: #FFFFFF;
+    font-size: 16px;
+    line-height: 30px;
+    min-width: 120px;
+    &-item{
+        &__link{
+            color: #011634 !important;
+            text-decoration: none  !important;
+            &:hover{
+                color:$color-green !important;
+            }
+        }
+    }
+}
+.char-select-box{
+    position: relative;
+}
+
+.tooltip-content{
+    display: none;
+}
+
+.filter-list label {     
+    -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear;
+    color: inherit;
+    line-height: 27px;
+    span span{
+        color: rgba(1, 22, 52, 0.3);
+        padding-left: 10px;
+    }
+}
+.filter-list label:hover { 
+    color:$color-green; 
+    span span{
+        color: rgba(1, 22, 52, 0.3);
+    }
+}
+.filter-list label > input[type=checkbox] { display: none; }
+.filter-list label > input[type=checkbox] + span { position: relative; padding-left: 30px; cursor: pointer; display: inline-block; }
+.filter-list label > input[type=checkbox]:disabled + span, .filter-list label > input[type=checkbox]:disabled + span:before { color: #999999; cursor: inherit; }
+.filter-list label > input[type=checkbox] + span:before { content: ''; display: block; width: 20px; height: 20px; border: 1px solid #dfe2e8; background: #fff; position: absolute; left: 0; top: 3px; cursor: pointer; @include transition($default-transition); }
+.filter-list label > input[type=checkbox] + span:after { content: ""; background: url('../img/icons/checked.svg') no-repeat center center;
+    background-size: cover; display: block; width: 14px; height: 14px; position: absolute; left: 3px; top: 6px; cursor: pointer; opacity: 0; @include transition($default-transition); text-align: center; color: #fff; line-height: 20px; }
+.filter-list label > input[type=checkbox]:checked + span:before { background: $color-green; border-color: $color-green; }
+.filter-list label > input[type=checkbox]:checked + span:after { opacity: 1; }
+
+@media screen and (max-width: 1280px) {
+    .product-title{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .product-char-block {
+        margin-bottom: 30px;
+    }
+    .product-chosen {
+        padding-top: 30px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .product-title{
+        font-size: 28px;
+    }   
+}
+@media screen and (max-width: 741px) {
+    .product-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .product-char.text-overflow{
+        max-height: 170px;
+    }
+    .product-info {
+        padding-bottom: 30px;
+    }
+    .product-char-block .link-more-filter{
+        margin-bottom: 0;
+    }
+    .char-select:after {      
+        margin-top: -7px;
+        font-size: 5px;
+    }
+    .char-select-list {
+        font-size: 12px;
+        line-height: 22px;
+        min-width: 100px;
+    }
 }
