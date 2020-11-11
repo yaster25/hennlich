@@ -140,4 +140,26 @@ $(document).ready(function(){
        $(this).toggleClass('opened') ;
     });
     
+    if($('.pdf-btn').length){
+        $('.pdf-list').mCustomScrollbar({});   
+        
+        $('.pdf-btn .btn').on('click', function(event) {    
+            $(this).toggleClass('pdf-btn-active');
+            $(this).next('.pdf-btn__list').toggleClass('active');
+            
+            return false;        
+        });
+         
+        
+        
+        $(document).bind("click touchstart",function(event) {
+            if ($(event.target).closest(".pdf-btn").length) return;
+            $('.pdf-btn .btn').removeClass('pdf-btn-active');
+            $('.pdf-btn__list').removeClass('active');
+
+            event.stopPropagation();
+          });
+    }
+    
+    
  });
