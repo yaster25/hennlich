@@ -9821,3 +9821,54 @@ div.title-search-result {
         font-size: 14px;
     }
 }
+.slider-product-image-nav__video{
+    position: relative;
+    &:before{
+        content: "\e916";
+        font-family: 'icomoon';
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        font-size: 40px;
+        margin-top: -20px;
+        margin-left: -20px;
+        @include transition($default-transition);
+    }
+}
+.slider-product-image-nav__video img{
+    opacity: 0.75;
+}
+.slider-product-image__video{
+    position: relative;
+    &:before{
+        content: "\e916";
+        font-family: 'icomoon';
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        font-size: 80px;
+        margin-top: -40px;
+        margin-left: -40px;
+        z-index: 9;
+        @include transition($default-transition);
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(#fff, 0.25);
+    }
+    &:hover{
+        &:before{
+           opacity: 0.8;
+        }
+    }
+}
+
+

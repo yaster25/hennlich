@@ -3693,3 +3693,12 @@ div.title-search-result { border: 0.6px solid #C0D1EC !important; }
 @media screen and (max-width: 741px) { .product-btns .pdf-btn { width: 100%; margin: 0 0 20px 0; }
   .pdf-btn__list { width: 100%; }
   .pdf-btn__list { font-size: 14px; } }
+.slider-product-image-nav__video { position: relative; }
+.slider-product-image-nav__video:before { content: "\e916"; font-family: 'icomoon'; position: absolute; z-index: 999; top: 50%; left: 50%; font-size: 40px; margin-top: -20px; margin-left: -20px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
+
+.slider-product-image-nav__video img { opacity: 0.75; }
+
+.slider-product-image__video { position: relative; }
+.slider-product-image__video:before { content: "\e916"; font-family: 'icomoon'; position: absolute; z-index: 999; top: 50%; left: 50%; font-size: 80px; margin-top: -40px; margin-left: -40px; z-index: 9; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
+.slider-product-image__video:after { content: ""; position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.25); }
+.slider-product-image__video:hover:before { opacity: 0.8; }
