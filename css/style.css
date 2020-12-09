@@ -1641,6 +1641,8 @@ input:-internal-autofill-selected { -webkit-appearance: menulist-button; backgro
 .item-news__bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: no-repeat center center; background-size: cover; z-index: 1; opacity: 0; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
 .item-news:hover .item-news__bg { opacity: 0.36; }
 
+.slider-news__slide { vertical-align: top; }
+
 .slider-news-arrows { position: absolute; bottom: 0; right: 0; width: 202px; height: 87px; }
 .slider-news-arrows .slick-prev, .slider-news-arrows .slick-next { width: 101px; height: 87px; background: rgba(255, 255, 255, 0.2); background: #FFFFFF; line-height: 87px; text-align: center; color: rgba(255, 255, 255, 0.32); top: 0; transform: none; }
 .slider-news-arrows .slick-prev:before, .slider-news-arrows .slick-next:before { background: rgba(1, 22, 52, 0.77); width: 100%; height: 100%; display: block; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
@@ -2128,7 +2130,7 @@ body.filter-open { overflow: hidden; height: 100vh; }
 
 .item-department { margin-bottom: 30px; background: #fff; }
 .item-department__title { display: -webkit-box; display: -moz-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -moz-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; min-height: 220px; padding: 60px 100px 60px 65px; position: relative; cursor: pointer; }
-.item-department__name { font-weight: 800; font-size: 65px; color: #ECF3FD; width: 520px; padding-top: 5px; }
+.item-department__name { font-weight: 800; font-size: 65px; color: #ECF3FD; color: rgba(122, 193, 133, 0.7); width: 520px; padding-top: 5px; }
 .item-department__text { width: calc(100% - 520px); font-size: 16px; line-height: 25px; color: #011634; }
 .item-department__icon { position: absolute; top: 65px; right: 52px; width: 30px; height: 30px; }
 .item-department__icon:before { content: ""; width: 30px; height: 8px; background: #7AC185; position: absolute; top: 50%; left: 50%; margin-top: -4px; margin-left: -15px; }

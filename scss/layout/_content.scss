@@ -1456,6 +1456,10 @@ input:-internal-autofill-selected {
     }
 }
 
+.slider-news__slide{
+    vertical-align: top;
+}
+
 .slider-news-arrows{
     position: absolute;
     bottom: 0;
@@ -3551,6 +3555,7 @@ body.filter-open {
         font-size: 65px;
         //line-height: 77px;
         color: #ECF3FD;
+        color: rgba($color-green, 0.7);
         width: 520px;
         padding-top: 5px;
     }
