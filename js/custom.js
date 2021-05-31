@@ -55,8 +55,28 @@ $(document).ready(function(){
         $('.top-slider-nav__slide[data-slide="0'+nextSlide+'"]').addClass('active');
          
         $('.top-slider-dots li').removeClass('active');
-        $('.top-slider-dots li[data-slide="0'+nextSlide+'"]').addClass('active');         
+        $('.top-slider-dots li[data-slide="0'+nextSlide+'"]').addClass('active');       
+         $('.js-top-slider-nav').slick('slickGoTo', nextSlide);
     });
+    
+    $('.js-top-slider-nav').slick({
+            infinite: true,
+            arrows:false,
+            dots:false,
+            slidesToShow: 4,
+            slidesToScroll: 1, 
+            vertical:true,
+            responsive: [   
+                {
+                  breakpoint: 741,
+                  settings: {
+                      vertical:false,
+                      variableWidth:true,
+                  }
+                }
+             ]
+        });
+    
     
     /*END TOP SLIDER*/
     
@@ -128,7 +148,11 @@ $(document).ready(function(){
     /*END TEAM SLIDER*/
     
       /* NICE INPUT*/
-    $(".input-phone").mask("+7 (999) 999-99-99");
+    $(".input-phone").mask("+7 (999) 999-99-99").on('click', function () {
+    if ($(this).val() === '+7 (___) ___-__-__') {
+        $(this).get(0).setSelectionRange(0, 0);
+        }
+    });;
     
     $('.nice-input__input').blur(function() {        
         if($(this).val().length>0){

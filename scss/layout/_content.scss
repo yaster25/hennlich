@@ -205,6 +205,8 @@ ul {
 .top-slider-nav{
     
     width: 100%;
+     height: 654px;
+    overflow: hidden;
     &-wrapper{
         position: absolute;
         top: 215px;
@@ -213,7 +215,8 @@ ul {
         z-index: 999;
     }
     &__slide{
-        height: 158px;
+        height: 158px !important;
+        
         margin-bottom: 6px;
         background: $color-green;
         padding: 42px 100px 42px 40px;
@@ -223,6 +226,7 @@ ul {
         @include transition($default-transition);
         position: relative;
         cursor: pointer;
+        display: flex !important;
         span{
             position:absolute;
             right: 30px;
@@ -242,7 +246,8 @@ ul {
                 
             }
         }
-        &.active{
+        &.active, 
+        &.slick-current{
             background: #fff;
             color: $color-blue;
             &:hover{
@@ -4796,8 +4801,11 @@ body.filter-open {
         left: 180px;
         width: 350px;
     }
+    .top-slider-nav{
+        height: 496px;
+    }
     .top-slider-nav__slide{
-        height: 118px;
+        height: 118px !important;
         padding-top: 10px;
         padding-bottom: 10px;
         font-size: 22px;
@@ -5309,6 +5317,7 @@ body.filter-open {
 }
 
 
+
 @media screen and (max-width: 1440px) {
     .top-slider__text {
         font-size: 54px;
@@ -5319,10 +5328,13 @@ body.filter-open {
     .top-slider__slide{
         height: 650px;
     }
+    .top-slider-nav{
+        height: 424px;
+    }
     .top-slider-nav__slide {
         font-size: 18px;
         padding: 10px 100px 10px 25px;
-        height: 100px;
+        height: 100px !important;
     }
     .top-slider-nav-wrapper{
         width: 300px;
@@ -5627,6 +5639,10 @@ body.filter-open {
 
     .aside-filter-btn{
         width: 300px;
+    }
+
+    .top-slider-dots li{
+        height: 80px;
     }
 }
 
@@ -7553,6 +7569,7 @@ body.filter-open {
         padding-left: 0;
         font-size: 32px;
         line-height: 42px;
+        margin-left: 0;
     }
     .top-slider-nav-wrapper {       
         width: 100%;
@@ -7566,6 +7583,8 @@ body.filter-open {
         width: auto;
         @include flexbox;
         padding-right: 15px;
+        height: 100px;
+        overflow: auto;
     }
     .top-slider-nav__slide {
         font-size: 16px;
@@ -8955,6 +8974,22 @@ body.filter-open {
     }
     .section-search .title{
         font-size: 24px;
+    }
+    .top-slider-nav__slide.slick-current{
+        background: $color-green !important;
+        color: $color-white !important;
+        &.active{
+            background: $color-white !important;
+            color: #011634 !important;
+        }
+    }
+    .top-slider-nav{
+        padding-right: 0;
+    }
+    .top-slider-nav{
+        &.slick-slider .slick-list{
+            padding-left: 15px;
+        }
     }
 }
 
